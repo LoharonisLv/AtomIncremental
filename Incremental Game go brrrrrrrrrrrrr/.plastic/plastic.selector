@@ -1,0 +1,4 @@
+repository "Incremental Game go brrrrrrrrrrrrr/Incremental Game go brrrrrrrrrrrrr@5773825540158@cloud"
+  path "/"
+    br "/main"
+    co "/main"
