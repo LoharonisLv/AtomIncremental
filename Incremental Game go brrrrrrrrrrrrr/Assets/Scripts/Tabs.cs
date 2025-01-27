@@ -1,9 +1,9 @@
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class Tabs : MonoBehaviour
 {
-    
+    public string check;
     //Tabs
 
     public CanvasGroup hydrogenScreen;
@@ -17,7 +17,7 @@ public class Tabs : MonoBehaviour
     public CanvasGroup o;
     public CanvasGroup f;
     public CanvasGroup ne;
-    public string[] groups = new string[] { "hydrogenScreen" , "heliumScreen", "menu", "li", "be", "b", "c", "n", "o", "f", "ne", "na", "mg", "al", "si", "p", "s", "cl", "ar", "k", "ca","sc", "ti","v", "cr","mn","fe","co", "ni", "cu", "zn", "ga", "ge", "as", "se", "br", "kr", "rb", "sr", "y" , "zr", "nb", "mo", "tc", "ru" , "rh", "pd", "ag", "cd", "in" , "sn", "sb" , "te", "i", "xe", "cs", "ba", "la", "ce", "pr", "nd", "pm", "sm", "eu", "gd", "tb", "dy", "ho", "er", "tm", "yb", "hf", "ta", "w", "re", "os", "ir", "pt", "au", "hg", "tl", "pb", "bi", "po", "at", "rn", "fr", "ra", "ac", "th", "pa", "u", "np", "pu", "am", "cm", "bk", "cf", "es", "fm", "md", "no", "lr", "rf", "db", "sg", "bh", "hs", "mt", "ds", "rg", "cn", "nh", "fl", "mc", "lv", "ts", "og" };
+    //public string[] groupName = { "hydrogenScreen" , "heliumScreen", "menu", "lithiumScreen", "berylliumScreen", "boronScreen", "carbonScreen", "nitrogenScreen", "oxygenScreen", "fluorineScreen", "neonScreen"};
 
     public void Start()
     {
@@ -35,26 +35,22 @@ public class Tabs : MonoBehaviour
     }
 
     
-    public void Update()
-    {
-        
-    }
 
-    public void EfficientTabChange(CanvasGroup group, string groups)
+    private void EfficientTabChange(CanvasGroup group)
     {
-        string check;
+        string[] groupName = new string[11] { "hydrogenScreen" , "heliumScreen", "menu", "lithiumScreen", "berylliumScreen", "boronScreen", "carbonScreen", "nitrogenScreen", "oxygenScreen", "fluorineScreen", "neonScreen"};
         check = group.ToString();
-        for (int n = 0; n < groups.Length; n++)
+        
+        foreach (string nos in groupName)
         {
-           
             
-            if (check.Equals(groups[n]))
+            if (check.Equals(nos))
             {
                 ActivateTabs(group);
             }
             else
             {
-                DeactivateTabs(group);
+                DeactivateTabs(CanvasGroup.Parse(nos));
             }
 
         }
@@ -65,7 +61,7 @@ public class Tabs : MonoBehaviour
         switch (id)
         {
             case 0:
-                EfficientTabChange(hydrogenScreen, "hydrogenScreen");
+                EfficientTabChange(hydrogenScreen);
                 break;
             case 1:
                 DeactivateTabs(hydrogenScreen);
@@ -203,14 +199,14 @@ public class Tabs : MonoBehaviour
         }
     }
 
-    public void ActivateTabs(CanvasGroup group)
+    private void ActivateTabs(CanvasGroup group)
     {
         group.alpha = 1;
         group.interactable = true;
         group.blocksRaycasts = true;
     }
     
-    public void DeactivateTabs(CanvasGroup group)
+    private void DeactivateTabs(CanvasGroup group)
     {
         group.alpha = 0;
         group.interactable = false;
