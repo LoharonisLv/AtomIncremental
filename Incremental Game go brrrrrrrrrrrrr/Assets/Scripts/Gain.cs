@@ -58,6 +58,7 @@ public class Gain : MonoBehaviour
     public Text maxBuyHText;
     public bool lithiumUnlock;
     public Text lithiumUnlockText;
+    public bool mineUnlock;
 
     public BigDouble lithium;
     public BigDouble lithiumBoostH;
@@ -67,6 +68,7 @@ public class Gain : MonoBehaviour
     public Text lithiumGainText;
     public Text lithiumText;
     public Text lithiumBoostText;
+    public Text mineUnlockText;
     
     public CanvasGroup period2Group;
     public CanvasGroup period3Group;
@@ -101,6 +103,7 @@ public class Gain : MonoBehaviour
         maxBuyHbought = bool.Parse(PlayerPrefs.GetString("maxBuyHbought", "false"));
         doubleHe = bool.Parse(PlayerPrefs.GetString("doubleHe", "false"));
         lithiumUnlock = bool.Parse(PlayerPrefs.GetString("lithiumUnlock", "false"));
+        mineUnlock = bool.Parse(PlayerPrefs.GetString("mineUnlock", "false"));
     }
 
     public void Save()
@@ -120,6 +123,7 @@ public class Gain : MonoBehaviour
         PlayerPrefs.SetString("maxBuyHbought", maxBuyHbought.ToString());
         PlayerPrefs.SetString("doubleHe", doubleHe.ToString());
         PlayerPrefs.SetString("lithiumUnlock", lithiumUnlock.ToString());
+        PlayerPrefs.SetString("mineUnlock", mineUnlock.ToString());
     }
 
     public void Update()
@@ -217,6 +221,14 @@ public class Gain : MonoBehaviour
         {
             lithiumUnlockText.text = "Unlock 1st period reset lithify (t Li tab)\nCost: 1.00e6 He";
         }
+        if (mineUnlock == true)
+        {
+            mineUnlockText.text = "Unlock mining (t Li tab)\nBought";
+        }
+        else
+        {
+            mineUnlockText.text = "Unlock mining (t Li tab)\nCost: 1.00e5 Li";
+        }
         hydrogen += persecst * Time.deltaTime;
 
         Save();
@@ -246,7 +258,7 @@ public class Gain : MonoBehaviour
             clickupgcount = 0;
             cpsupgcount = 0;
             heliumGainUpg1Level = 0;
-
+            
             helium += heliumGain;
         }
     }
@@ -266,7 +278,7 @@ public class Gain : MonoBehaviour
             heliumGainUpg1Level = 0;
             heliumGainUpg2Level = 0;
             cpsUpg1HeLevel = 0;
-
+            maxBuyHbought = false;
             helium = 0;
         
             lithium += lithiumGain;
@@ -432,6 +444,15 @@ public class Gain : MonoBehaviour
         {
             lithiumUnlock = true;
             helium -= 1e6;
+        }
+    }
+
+    public void mineCheck()
+    {
+        if (lithium > 1e5 && mineUnlock == false)
+        {
+            mineUnlock = true;
+            lithium -= 1e5;
         }
     }
     
