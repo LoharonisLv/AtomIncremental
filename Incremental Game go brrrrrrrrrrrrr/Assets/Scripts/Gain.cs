@@ -64,11 +64,20 @@ public class Gain : MonoBehaviour
     public BigDouble lithiumBoostH;
     public BigDouble lithiumBoostHe;
     public BigDouble lithiumGain;
+    public BigDouble heliumGainUpg3Level;
     
     public Text lithiumGainText;
     public Text lithiumText;
     public Text lithiumBoostText;
     public Text mineUnlockText;
+    public Text heliumGainUpg3Text;
+    public BigDouble cpsUpg1LiLevel;
+    public Text cpsUpg1LiText;
+    public bool biggerHeBoostCheck;
+    public Text biggerHeBoostText;
+    public bool save1stMaxBuyCheck;
+    public Text save1stMaxBuyText;
+    
     
     public CanvasGroup period2Group;
     public CanvasGroup period3Group;
@@ -94,16 +103,20 @@ public class Gain : MonoBehaviour
         helium = BigDouble.Parse(PlayerPrefs.GetString("helium", "0"));
         heliumGainUpg1Level = BigDouble.Parse(PlayerPrefs.GetString("heliumGainUpg1Level", "0"));
         heliumGainUpg2Level = BigDouble.Parse(PlayerPrefs.GetString("heliumGainUpg2Level", "0"));
+        heliumGainUpg3Level = BigDouble.Parse(PlayerPrefs.GetString("heliumGainUpg3Level", "0"));
         cpsUpg1HeLevel = BigDouble.Parse(PlayerPrefs.GetString("cpsUpg1HeLevel", "0"));
         
         clickUpg2Level = BigDouble.Parse(PlayerPrefs.GetString("clickUpg2Level", "0"));
         cpsUpg2Level = BigDouble.Parse(PlayerPrefs.GetString("cpsUpg2Level", "0"));
+        cpsUpg1LiLevel = BigDouble.Parse(PlayerPrefs.GetString("cpsUpg1LiLevel", "0"));
         clickupgcount = BigDouble.Parse(PlayerPrefs.GetString("clickupgcount", "0"));
         cpsupgcount = BigDouble.Parse(PlayerPrefs.GetString("cpsupgcount", "0"));
         maxBuyHbought = bool.Parse(PlayerPrefs.GetString("maxBuyHbought", "false"));
         doubleHe = bool.Parse(PlayerPrefs.GetString("doubleHe", "false"));
         lithiumUnlock = bool.Parse(PlayerPrefs.GetString("lithiumUnlock", "false"));
         mineUnlock = bool.Parse(PlayerPrefs.GetString("mineUnlock", "false"));
+        biggerHeBoostCheck = bool.Parse(PlayerPrefs.GetString("biggerHeBoostCheck", "false"));
+        save1stMaxBuyCheck = bool.Parse(PlayerPrefs.GetString("save1stMaxBuyCheck", "false"));
     }
 
     public void Save()
@@ -114,16 +127,20 @@ public class Gain : MonoBehaviour
         PlayerPrefs.SetString("helium", helium.ToString());
         PlayerPrefs.SetString("heliumGainUpg1Level", heliumGainUpg1Level.ToString());
         PlayerPrefs.SetString("heliumGainUpg2Level", heliumGainUpg2Level.ToString());
+        PlayerPrefs.SetString("heliumGainUpg3Levle", heliumGainUpg3Level.ToString());
         PlayerPrefs.SetString("cpsUpg1HeLevel", cpsUpg1HeLevel.ToString());
 
         PlayerPrefs.SetString("clickUpg2Level", clickUpg2Level.ToString());
         PlayerPrefs.SetString("cpsUpg2Level", cpsUpg2Level.ToString());
+        PlayerPrefs.SetString("cpsUpg1LiLevel", cpsUpg1LiLevel.ToString());
         PlayerPrefs.SetString("clickupgcount", clickupgcount.ToString());
         PlayerPrefs.SetString("cpsupgcount", cpsupgcount.ToString());
         PlayerPrefs.SetString("maxBuyHbought", maxBuyHbought.ToString());
         PlayerPrefs.SetString("doubleHe", doubleHe.ToString());
         PlayerPrefs.SetString("lithiumUnlock", lithiumUnlock.ToString());
         PlayerPrefs.SetString("mineUnlock", mineUnlock.ToString());
+        PlayerPrefs.SetString("biggerHeBoostCheck", biggerHeBoostCheck.ToString());
+        PlayerPrefs.SetString("save1stMaxBuyCheck", save1stMaxBuyCheck.ToString());
     }
 
     public void Update()
@@ -134,14 +151,21 @@ public class Gain : MonoBehaviour
         buyMaxAutoClicker2Text.text = "Buy max 4th hydrogen upgrades [" + BuyMaxAutoClicker2n() + "]";
         if (doubleHe == false)
         {
-            heliumGain = (150 * Sqrt(hydrogen / 1e20)* Pow(1.1, heliumGainUpg1Level)* Pow(1.5, heliumGainUpg2Level)*(1+lithiumBoostHe));
+            heliumGain = (150 * Sqrt(hydrogen / 1e20)* Pow(1.1, heliumGainUpg1Level)* Pow(1.5, heliumGainUpg2Level)*(1+lithiumBoostHe)*Pow(1.25, heliumGainUpg3Level));
         }
         else
         {
-            heliumGain = 2*(150 * Sqrt(hydrogen / 1e20))* Pow(1.1, heliumGainUpg1Level)* Pow(1.5, heliumGainUpg2Level *(1+lithiumBoostHe));
+            heliumGain = 2*(150 * Sqrt(hydrogen / 1e20))* Pow(1.1, heliumGainUpg1Level)* Pow(1.5, heliumGainUpg2Level *(1+lithiumBoostHe)*Pow(1.25, heliumGainUpg3Level));
         }
-        
-        heliumBoost = (helium * 0.02) + 1;
+
+        if (biggerHeBoostCheck == false)
+        {
+            heliumBoost = (helium * 0.02) + 1;
+        }
+        else
+        {
+            heliumBoost = (helium * 0.5) + 1;
+        }
         heliumGainText1.text = "Do nuclear fusion:\n+" + Floor(heliumGain).ToString("F0") + " helium";
         heliumGainText2.text = "Do nuclear fusion:\n+" + Floor(heliumGain).ToString("F0") + " helium";
 
@@ -154,7 +178,7 @@ public class Gain : MonoBehaviour
         
         hydrogenTxt.text = "Hydrogen: " + NotationMethod(hydrogen, "F0");
         
-        persecst = (cpsupgcount + (cpsUpg2Level * cpsUpg2Power)) * heliumBoost * Pow(1.2, cpsUpg1HeLevel) *(1+lithiumBoostH);
+        persecst = (cpsupgcount + (cpsUpg2Level * cpsUpg2Power)) * heliumBoost * Pow(1.2, cpsUpg1HeLevel) *(1+lithiumBoostH)*Pow(1.3, cpsUpg1LiLevel);
         persec.text = NotationMethod(persecst, "F0") + " hydrogen/s";
 
         string clickupgcostString;
@@ -192,6 +216,15 @@ public class Gain : MonoBehaviour
         cpsUpg1HeCostString = NotationMethod(cpsUpg1HeCost, "F0");
         cpsUpg1HeText.text = "Auto clickers works 20% faster\nCost: " + cpsUpg1HeCostString + " He\nLevel: "+ NotationMethod(cpsUpg1HeLevel, "F0");
         
+        string heliumGainUpg3CostString;
+        var heliumGainUpg3Cost = 2 * Pow(1.5, heliumGainUpg3Level);
+        heliumGainUpg3CostString = NotationMethod(heliumGainUpg3Cost, "F0");
+        heliumGainUpg3Text.text = "Upgrade Helium gain by 25%\nCost: " + heliumGainUpg3CostString + " Li\nLevel: "+ NotationMethod(heliumGainUpg3Level, "F0");
+        
+        string cpsUpg1LiCostString;
+        var cpsUpg1LiCost = 4 * Pow(1.25, cpsUpg1LiLevel);
+        cpsUpg1LiCostString = NotationMethod(cpsUpg1LiCost, "F0");
+        cpsUpg1LiText.text = "Increase hydrogen gain speed by 30%\nCost: " + cpsUpg1LiCostString + " Li\nLevel: "+ NotationMethod(cpsUpg1LiLevel, "F0");
         
         clickpowerTxt.text = "Click for " + NotationMethod(clickpower, "F0") + " hydrogen";
 
@@ -228,6 +261,24 @@ public class Gain : MonoBehaviour
         else
         {
             mineUnlockText.text = "Unlock mining (t Li tab)\nCost: 1.00e5 Li";
+        }
+
+        if (biggerHeBoostCheck == true)
+        {
+            biggerHeBoostText.text = "Improve Helium bonus to hydrogen\nBought";
+        }
+        else
+        {
+            biggerHeBoostText.text = "Improve Helium bonus to hydrogen\nCost: 1000 Li";
+        }
+        
+        if (save1stMaxBuyCheck == true)
+        {
+            save1stMaxBuyText.text = "The 1st max buys don't reset on Lithify\nBought";
+        }
+        else
+        {
+            save1stMaxBuyText.text = "The 1st max buys don't reset on Lithify\nCost: 5e3 Li";
         }
         hydrogen += persecst * Time.deltaTime;
 
@@ -278,7 +329,10 @@ public class Gain : MonoBehaviour
             heliumGainUpg1Level = 0;
             heliumGainUpg2Level = 0;
             cpsUpg1HeLevel = 0;
-            maxBuyHbought = false;
+            if (save1stMaxBuyCheck == false)
+            {
+                maxBuyHbought = false;
+            }
             helium = 0;
         
             lithium += lithiumGain;
@@ -416,6 +470,23 @@ public class Gain : MonoBehaviour
                     cpsUpg1HeLevel++;
                 }
                 break;
+            case "HeG3":
+                var cost11 = 2 * Pow(1.5, heliumGainUpg3Level);
+                if (lithium >= cost11)
+                {
+                    lithium -= cost11;
+                    heliumGainUpg3Level++;
+                }
+                break;
+            case "A1Li":
+                var cost12 = 4 * Pow(1.25, cpsUpg1LiLevel);
+                if (lithium >= cost12)
+                {
+                    lithium -= cost12;
+                    cpsUpg1LiLevel++;
+                }
+
+                break;
         }
     }
 
@@ -449,10 +520,28 @@ public class Gain : MonoBehaviour
 
     public void mineCheck()
     {
-        if (lithium > 1e5 && mineUnlock == false)
+        if (lithium >= 1e5 && mineUnlock == false)
         {
             mineUnlock = true;
             lithium -= 1e5;
+        }
+    }
+
+    public void biggerHeBoost()
+    {
+        if (lithium >= 1e3 && biggerHeBoostCheck == false)
+        {
+            biggerHeBoostCheck = true;
+            lithium -= 1e3;
+        }
+    }
+
+    public void save1stMaxBuy()
+    {
+        if (lithium >= 5e3 && save1stMaxBuyCheck == false)
+        {
+            save1stMaxBuyCheck = true;
+            lithium -= 5e3;
         }
     }
     
