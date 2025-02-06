@@ -500,6 +500,7 @@ public class Gain : MonoBehaviour
         berylliumText.text = "Beryllium: " + NotationMethod(beryllium, "F0");
         berylliumBoostText.text = NotationMethod(berylliumBoost, "F2") + "x to click strength and lithium";
         berylliumGainText.text = "Mining " + NotationMethod(berylliumMines, "F0") + " beryllium/s";
+        
         string berylliumMinesCostString;
         var berylliumMinesCost = 2e4 * Pow(10, berylliumMines);
         berylliumMinesCostString = NotationMethod(berylliumMinesCost, "F0");
