@@ -167,7 +167,7 @@ public class Gain : MonoBehaviour
     public CanvasGroup lanthanoidGroup;
     public CanvasGroup actinoidGroup;
 
-    private AudioSource audioSource;
+    public static AudioSource audioSource;
     public Text audioSourceText;
 
     public void Start()
@@ -339,7 +339,7 @@ public class Gain : MonoBehaviour
                          cpscostString + "\nLevel:" + NotationMethod(cpsupgcount, "F0");
 
         string cpsUpg2CostString;
-        var cpsUpg2Cost = 1000 * Pow(1.09, cpsUpg2Level);
+        var cpsUpg2Cost = 1000 * Pow(1.07, cpsUpg2Level);
         cpsUpg2CostString = NotationMethod(cpsUpg2Cost, "F0");
         cpsupg2.text = "Auto clicker 2.0\n" + (5 * heliumBoost).ToString("F0") + " hydrogen/s\nCost: " +
                        cpsUpg2CostString + "\nLevel:" + NotationMethod(cpsUpg2Level, "F0");
@@ -823,7 +823,7 @@ public class Gain : MonoBehaviour
 
                 break;
             case "A2":
-                var cost7 = 1000 * Pow(1.09, cpsUpg2Level);
+                var cost7 = 1000 * Pow(1.07, cpsUpg2Level);
                 if (hydrogen >= cost7)
                 {
                     cpsUpg2Level++;
@@ -834,7 +834,7 @@ public class Gain : MonoBehaviour
             case "A2MAX":
                 var b3 = 1000;
                 var c3 = hydrogen;
-                var r3 = 1.09;
+                var r3 = 1.07;
                 var k3 = cpsUpg2Level;
                 var n3 = Floor(Log(((c3 * (r3 - 1)) / (b3 * Pow(r3, k3))) + 1, r3));
 
@@ -1076,7 +1076,7 @@ public class Gain : MonoBehaviour
     {
         var b = 1000;
         var c = hydrogen;
-        var r = 1.09;
+        var r = 1.07;
         var k = cpsUpg2Level;
         var n = Floor(Log(((c * (r - 1)) / (b * Pow(r, k))) + 1, r));
         return n;
