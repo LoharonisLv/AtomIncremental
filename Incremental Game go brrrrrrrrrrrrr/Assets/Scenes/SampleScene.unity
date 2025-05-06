@@ -7121,6 +7121,7 @@ MonoBehaviour:
   period7Group: {fileID: 582479927}
   lanthanoidGroup: {fileID: 29256101}
   actinoidGroup: {fileID: 1477381147}
+  audioSource: {fileID: 1287174128}
   audioSourceText: {fileID: 1173456359}
 --- !u!114 &275519048
 MonoBehaviour:
@@ -28746,7 +28747,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1287174127
 RectTransform:

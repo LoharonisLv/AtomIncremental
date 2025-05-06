@@ -167,7 +167,7 @@ public class Gain : MonoBehaviour
     public CanvasGroup lanthanoidGroup;
     public CanvasGroup actinoidGroup;
 
-    public static AudioSource audioSource;
+    public AudioSource audioSource;
     public Text audioSourceText;
 
     public void Start()
@@ -1109,7 +1109,7 @@ public class Gain : MonoBehaviour
             audioSource.Play();
         }
     }
-
+/*
     public void StopMusic()
     {
         if (audioSource.isPlaying)
@@ -1130,5 +1130,5 @@ public class Gain : MonoBehaviour
             audioSource.Stop();
             audioSourceText.text = "Unmute";
         }
-    }
+    }*/
 }
