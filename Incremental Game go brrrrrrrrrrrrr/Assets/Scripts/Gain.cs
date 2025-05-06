@@ -283,12 +283,12 @@ public class Gain : MonoBehaviour
         buyMaxAutoClicker2Text.text = "Buy max 4th hydrogen upgrades [" + BuyMaxAutoClicker2n() + "]";
         if (doubleHe == false)
         {
-            heliumGain = (150 * Sqrt(hydrogen / 1e20) * Pow(1.1, heliumGainUpg1Level) * Pow(1.5, heliumGainUpg2Level) *
+            heliumGain = (150 * Sqrt(hydrogen / 2.25e9) * Pow(1.1, heliumGainUpg1Level) * Pow(1.5, heliumGainUpg2Level) *
                           (1 + lithiumBoostHe) * Pow(1.25, heliumGainUpg3Level));
         }
         else
         {
-            heliumGain = 2 * (150 * Sqrt(hydrogen / 1e20)) * Pow(1.1, heliumGainUpg1Level) * Pow(1.5,
+            heliumGain = 2 * (150 * Sqrt(hydrogen / 2.25e9)) * Pow(1.1, heliumGainUpg1Level) * Pow(1.5,
                 heliumGainUpg2Level * (1 + lithiumBoostHe) * Pow(1.25, heliumGainUpg3Level));
         }
 
@@ -594,7 +594,7 @@ public class Gain : MonoBehaviour
 
     public void NuclearFusion()
     {
-        if (hydrogen > 4.45e14)
+        if (hydrogen > 1.1e5)
         {
             hydrogen = 0;
             clickpower = 1;
