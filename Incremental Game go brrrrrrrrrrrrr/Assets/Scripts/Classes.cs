@@ -15,6 +15,7 @@
     {
         public BigDouble HeliumGsin = 0;
         public BigDouble HeliumBoostPower = 0;
+        public bool DoubleHelium = false;
     }
 
     public class Lithium
