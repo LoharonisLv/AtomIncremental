@@ -134,7 +134,7 @@ public class Tabs : MonoBehaviour
 
     
 
-    private void EfficientTabChange(CanvasGroup group)
+    private void EfficientTabChange(object group)
     {
         CanvasGroup [] groups = new CanvasGroup[120] { hydrogenScreen, heliumScreen, menu, li, be, b, c, n, o, f, ne, na, mg, al, si, p, s, cl, ar, k, ca, sc, ti, v, cr, mn, fe, co, ni, cu, zn, ga, ge, ars, se, br, kr, rb, sr, y, zr, nb, mo, tc, ru, rh, pd, ag, cd, ind, sn, sb, te, i, xe, cs, ba, la, ce, pr, nd, pm, sm, eu, gd, tb, dy, ho, er, tm, yb, lu, hf, ta, w, re, os, ir, pt, au, hg, tl, pb, bi, po, at, rn, fr, ra, ac, th, pa, u, np, pu, am, cm, bk, cf, es, fm, md, no, lr, rf, db, sg, bh, hs, mt, ds, rg, cn, nh, fl, mc, lv, ts, og, changelog};
     
@@ -151,375 +151,53 @@ public class Tabs : MonoBehaviour
         }
     }
 
+    private object[] _tabs;
+    private int currentTabId = -1;
+    private int lastTabBeforeMenu = -1;
+    
     public void SwitchTabs(int id)
-    {
-        switch (id)
+    { 
+        _tabs = new object[]
         {
-            case 0:
-                EfficientTabChange(hydrogenScreen);
-                break;
-            case 1:
-                EfficientTabChange(heliumScreen);
-                break;
-            case 2:
-                EfficientTabChange(menu);
-                break;
-            case 3:
-                EfficientTabChange(li);
-                break;
-            case 4:
-                EfficientTabChange(be);
-                break;
-            case 5:
-                EfficientTabChange(b);
-                break;
-            case 6:
-                EfficientTabChange(c);
-                break;
-            case 7:
-                EfficientTabChange(n);
-                break;
-            case 8:
-                EfficientTabChange(o);
-                break;
-            case 9:
-                EfficientTabChange(f);
-                break;
-            case 10:
-                EfficientTabChange(ne);
-                break;
-            case 11:
-                EfficientTabChange(na);
-                break;
-            case 12:
-                EfficientTabChange(mg);
-                break;
-            case 13:
-                EfficientTabChange(al);
-                break;
-            case 14:
-                EfficientTabChange(si);
-                break;
-            case 15:
-                EfficientTabChange(p);
-                break;
-            case 16:
-                EfficientTabChange(s);
-                break;
-            case 17:
-                EfficientTabChange(cl);
-                break;
-            case 18:
-                EfficientTabChange(ar);
-                break;
-            case 19:
-                EfficientTabChange(k);
-                break;
-            case 20:
-                EfficientTabChange(ca);
-                break;
-            case 21:
-                EfficientTabChange(sc);
-                break;
-            case 22:
-                EfficientTabChange(ti);
-                break;
-            case 23:
-                EfficientTabChange(v);
-                break;
-            case 24:
-                EfficientTabChange(cr);
-                break;
-            case 25:
-                EfficientTabChange(mn);
-                break;
-            case 26:
-                EfficientTabChange(fe);
-                break;
-            case 27:
-                EfficientTabChange(co);
-                break;
-            case 28:
-                EfficientTabChange(ni);
-                break;
-            case 29:
-                EfficientTabChange(cu);
-                break;
-            case 30:
-                EfficientTabChange(zn);
-                break;
-            case 31:
-                EfficientTabChange(ga);
-                break;
-            case 32:
-                EfficientTabChange(ge);
-                break;
-            case 33:
-                EfficientTabChange(ars);
-                break;
-            case 34:
-                EfficientTabChange(se);
-                break;
-            case 35:
-                EfficientTabChange(br);
-                break;
-            case 36:
-                EfficientTabChange(kr);
-                break;
-            case 37:
-                EfficientTabChange(rb);
-                break;
-            case 38:
-                EfficientTabChange(sr);
-                break;
-            case 39:
-                EfficientTabChange(y);
-                break;
-            case 40:
-                EfficientTabChange(zr);
-                break;
-            case 41:
-                EfficientTabChange(nb);
-                break;
-            case 42:
-                EfficientTabChange(mo);
-                break;
-            case 43:
-                EfficientTabChange(tc);
-                break;
-            case 44:
-                EfficientTabChange(ru);
-                break;
-            case 45:
-                EfficientTabChange(rh);
-                break;
-            case 46:
-                EfficientTabChange(pd);
-                break;
-            case 47:
-                EfficientTabChange(ag);
-                break;
-            case 48:
-                EfficientTabChange(cd);
-                break;
-            case 49:
-                EfficientTabChange(ind);
-                break;
-            case 50:
-                EfficientTabChange(sn);
-                break;
-            case 51:
-                EfficientTabChange(sb);
-                break;
-            case 52:
-                EfficientTabChange(te);
-                break;
-            case 53:
-                EfficientTabChange(i);
-                break;
-            case 54:
-                EfficientTabChange(xe);
-                break;
-            case 55:
-                EfficientTabChange(cs);
-                break;
-            case 56:
-                EfficientTabChange(ba);
-                break;
-            case 57:
-                EfficientTabChange(la);
-                break;
-            case 58:
-                EfficientTabChange(ce);
-                break;
-            case 59:
-                EfficientTabChange(pr);
-                break;
-            case 60:
-                EfficientTabChange(nd);
-                break;
-            case 61:
-                EfficientTabChange(pm);
-                break;
-            case 62:
-                EfficientTabChange(sm);
-                break;
-            case 63:
-                EfficientTabChange(eu);
-                break;
-            case 64:
-                EfficientTabChange(gd);
-                break;
-            case 65:
-                EfficientTabChange(tb);
-                break;
-            case 66:
-                EfficientTabChange(dy);
-                break;
-            case 67:
-                EfficientTabChange(ho);
-                break;
-            case 68:
-                EfficientTabChange(er);
-                break;
-            case 69:
-                EfficientTabChange(tm);
-                break;
-            case 70:
-                EfficientTabChange(yb);
-                break;
-            case 71:
-                EfficientTabChange(lu);
-                break;
-            case 72:
-                EfficientTabChange(hf);
-                break;
-            case 73:
-                EfficientTabChange(ta);
-                break;
-            case 74:
-                EfficientTabChange(w);
-                break;
-            case 75:
-                EfficientTabChange(re);
-                break;
-            case 76:
-                EfficientTabChange(os);
-                break;
-            case 77:
-                EfficientTabChange(ir);
-                break;
-            case 78:
-                EfficientTabChange(pt);
-                break;
-            case 79:
-                EfficientTabChange(au);
-                break;
-            case 80:
-                EfficientTabChange(hg);
-                break;
-            case 81:
-                EfficientTabChange(tl);
-                break;
-            case 82:
-                EfficientTabChange(pb);
-                break;
-            case 83:
-                EfficientTabChange(bi);
-                break;
-            case 84:
-                EfficientTabChange(po);
-                break;
-            case 85:
-                EfficientTabChange(at);
-                break;
-            case 86:
-                EfficientTabChange(rn);
-                break;
-            case 87:
-                EfficientTabChange(fr);
-                break;
-            case 88:
-                EfficientTabChange(ra);
-                break;
-            case 89:
-                EfficientTabChange(ac);
-                break;
-            case 90:
-                EfficientTabChange(th);
-                break;
-            case 91:
-                EfficientTabChange(pa);
-                break;
-            case 92:
-                EfficientTabChange(u);
-                break;
-            case 93:
-                EfficientTabChange(np);
-                break;
-            case 94:
-                EfficientTabChange(pu);
-                break;
-            case 95:
-                EfficientTabChange(am);
-                break;
-            case 96:
-                EfficientTabChange(cm);
-                break;
-            case 97:
-                EfficientTabChange(bk);
-                break;
-            case 98:
-                EfficientTabChange(cf);
-                break;
-            case 99:
-                EfficientTabChange(es);
-                break;
-            case 100:
-                EfficientTabChange(fm);
-                break;
-            case 101:
-                EfficientTabChange(md);
-                break;
-            case 102:
-                EfficientTabChange(no);
-                break;
-            case 103:
-                EfficientTabChange(lr);
-                break;
-            case 104:
-                EfficientTabChange(rf);
-                break;
-            case 105:
-                EfficientTabChange(db);
-                break;
-            case 106:
-                EfficientTabChange(sg);
-                break;
-            case 107:
-                EfficientTabChange(bh);
-                break;
-            case 108:
-                EfficientTabChange(hs);
-                break;
-            case 109:
-                EfficientTabChange(mt);
-                break;
-            case 110:
-                EfficientTabChange(ds);
-                break;
-            case 111:
-                EfficientTabChange(rg);
-                break;
-            case 112:
-                EfficientTabChange(cn);
-                break;
-            case 113:
-                EfficientTabChange(nh);
-                break;
-            case 114:
-                EfficientTabChange(fl);
-                break;
-            case 115:
-                EfficientTabChange(mc);
-                break;
-            case 116:
-                EfficientTabChange(lv);
-                break;
-            case 117:
-                EfficientTabChange(ts);
-                break;
-            case 118:
-                EfficientTabChange(og);
-                break;
-            case 119:
-                EfficientTabChange(changelog);
-                break;
-            default:
-                Debug.Log(message: "Is not assigned");
-                break;
+            hydrogenScreen, heliumScreen, menu, li, be, b, c, n, o, f, ne, na, mg, al, si, p, s, cl, ar, k, ca, sc, ti, v,
+            cr, mn, fe, co, ni, cu, zn, ga, ge, ars, se, br, kr, rb, sr, y, zr, nb, mo, tc, ru, rh, pd, ag, cd, ind, sn, sb,
+            te, i, xe, cs, ba, la, ce, pr, nd, pm, sm, eu, gd, tb, dy, ho, er, tm, yb, lu, hf, ta, w, re, os, ir, pt, au, hg,
+            tl, pb, bi, po, at, rn, fr, ra, ac, th, pa, u, np, pu, am, cm, bk, cf, es, fm, md, no, lr, rf, db, sg, bh, hs,
+            mt, ds, rg, cn, nh, fl, mc, lv, ts, og, changelog
+        };
+        if (id < 0 || id >= _tabs.Length)
+        {
+            Debug.Log("Is not assigned");
+            return;
+        }
+
+        // ID for 'menu' is assumed to be 2
+        const int MenuTabId = 2;
+
+        if (id == MenuTabId)
+        {
+            if (currentTabId == MenuTabId && lastTabBeforeMenu != -1)
+            {
+                // Going back to the last tab before the menu
+                EfficientTabChange(_tabs[lastTabBeforeMenu]);
+                currentTabId = lastTabBeforeMenu;
+                lastTabBeforeMenu = -1;
+            }
+            else
+            {
+                // Going to the menu
+                lastTabBeforeMenu = currentTabId;
+                EfficientTabChange(_tabs[MenuTabId]);
+                currentTabId = MenuTabId;
+            }
+        }
+        else
+        {
+            EfficientTabChange(_tabs[id]);
+            currentTabId = id;
         }
     }
+
 
     private void ActivateTabs(CanvasGroup group)
     {
