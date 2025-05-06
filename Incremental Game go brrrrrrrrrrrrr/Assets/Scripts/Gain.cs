@@ -460,7 +460,7 @@ public class Gain : MonoBehaviour
         }
         else
         {
-            save1stPeriodText.text = "Lithify longer resets 1st period\nCost: 2e3 Be";
+            save1stPeriodText.text = "Lithify no longer resets 1st period\nCost: 2e3 Be";
         }
 
         if (bCheck == true)
