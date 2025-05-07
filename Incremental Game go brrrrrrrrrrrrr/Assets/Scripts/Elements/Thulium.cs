@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Thulium
+    public class Thulium : MonoBehaviour
     {
         
     }
