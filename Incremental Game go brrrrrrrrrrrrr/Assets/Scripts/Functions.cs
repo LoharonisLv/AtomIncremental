@@ -1,6 +1,7 @@
-﻿namespace BreakInfinity
+﻿using UnityEngine;
+namespace BreakInfinity
 {
-    public class Functions
+    public class Functions : MonoBehaviour
     {
         
     }

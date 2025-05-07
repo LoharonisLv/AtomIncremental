@@ -1,6 +1,8 @@
-﻿namespace BreakInfinity
+﻿using UnityEngine;
+namespace BreakInfinity
+    
 {
-    public class CurrencyGain
+    public class CurrencyGain : MonoBehaviour
     {
         public Hydrogen Hydrogen;
         void HydrogenClick()

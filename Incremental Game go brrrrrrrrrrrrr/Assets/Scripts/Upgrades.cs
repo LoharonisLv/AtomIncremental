@@ -1,6 +1,7 @@
-﻿namespace BreakInfinity
+﻿using UnityEngine;
+namespace BreakInfinity
 {
-    public class Upgrades
+    public class Upgrades : MonoBehaviour
     {
         
     }

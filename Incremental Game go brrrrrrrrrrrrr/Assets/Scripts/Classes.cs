@@ -1,4 +1,5 @@
-﻿namespace BreakInfinity
+﻿using UnityEngine;
+namespace BreakInfinity
 {
     public class Hydrogen
     {
