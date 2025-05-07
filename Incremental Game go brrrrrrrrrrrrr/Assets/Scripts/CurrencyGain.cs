@@ -5,7 +5,8 @@ namespace BreakInfinity
     public class CurrencyGain : MonoBehaviour
     {
         public Hydrogen Hydrogen;
-        void HydrogenClick()
+
+        public void HydrogenClick()
         {
             Hydrogen.BigAssNumber += Hydrogen.ClickPower;
         }

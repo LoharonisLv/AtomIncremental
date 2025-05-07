@@ -6,7 +6,11 @@ using System;
 
 public class Gain : MonoBehaviour
 {
+    //classes
     public Hydrogen Hydrogen;
+    public Text texts;
+    
+    
     public Text hydrogenTxt;
     public BigDouble hydrogen; //variables
     public BigDouble clickpower;
@@ -315,7 +319,7 @@ public class Gain : MonoBehaviour
         lithiumBoostText.text = NotationMethod(lithiumBoostH, "F2") + "xH and " + NotationMethod(lithiumBoostHe, "F2") +
                                 "He boost";
 
-        hydrogenTxt.text = "Hydrogen: " + NotationMethod(hydrogen, "F0");
+        hydrogenTxt.text = texts.HydrogenCount + NotationMethod(hydrogen, "F0");
 
         persecst = (cpsupgcount + (cpsUpg2Level * cpsUpg2Power)) * heliumBoost * Pow(1.2, cpsUpg1HeLevel) *
                    (1 + lithiumBoostH) * Pow(1.3, cpsUpg1LiLevel);
