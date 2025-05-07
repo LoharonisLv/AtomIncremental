@@ -813,14 +813,7 @@ public class Gain : MonoBehaviour
         }
     }
 
-    public void doubleHeCheck()
-    {
-        if (helium >= 1000 && doubleHe == false)
-        {
-            helium -= 1000;
-            doubleHe = true;
-        }
-    }
+    
 
     public void lithiumCheck()
     {

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 namespace BreakInfinity
 {
     public class Hydrogen : MonoBehaviour
@@ -11,13 +12,15 @@ namespace BreakInfinity
         public BigDouble HydrogenGen = 0;
         public BigDouble PercentageBoost = 0;
     }
+    [System.Serializable]
     public class Helium : MonoBehaviour
     {
+        public BigDouble BigAssNumber = 0;
         public BigDouble HeliumGain = 0;
         public BigDouble HeliumBoostPower = 0;
         public bool DoubleHelium = false;
     }
-    public class Lithium : MonoBehaviour
+    private class Lithium : MonoBehaviour
     {
         
     }
