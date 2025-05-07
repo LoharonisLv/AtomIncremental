@@ -6,6 +6,7 @@ using System;
 
 public class Gain : MonoBehaviour
 {
+    public Hydrogen Hydrogen;
     public Text hydrogenTxt;
     public BigDouble hydrogen; //variables
     public BigDouble clickpower;
@@ -276,7 +277,7 @@ public class Gain : MonoBehaviour
 
     public void Update()
     {
-
+        Hydrogen.BigAssNumber += Hydrogen.HydrogenGen * Time.deltaTime;
         buyMaxClickUpg1Text.text = "Buy max 1st hydrogen upgrades [" + BuyMaxClickUpgrade1n() + "]";
         buyMaxClickUpg2Text.text = "Buy max 2nd hydrogen upgrades [" + BuyMaxClickUpgrade2n() + "]";
         buyMaxAutoClicker1Text.text = "Buy max 3rd hydrogen upgrades [" + BuyMaxAutoClicker1n() + "]";
