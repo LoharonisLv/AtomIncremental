@@ -233,4 +233,252 @@ namespace BreakInfinity
     {
         
     }
+    public class Lanthanum : MonoBehaviour
+    {
+        
+    }
+    public class Cerium : MonoBehaviour
+    {
+        
+    }
+    public class Praseodymium : MonoBehaviour
+    {
+        
+    }
+    public class Neodymium : MonoBehaviour
+    {
+        
+    }
+    public class Promethium : MonoBehaviour
+    {
+        
+    }
+    public class Samarium : MonoBehaviour
+    {
+        
+    }
+    public class Europium : MonoBehaviour
+    {
+        
+    }
+    public class Gadolinium : MonoBehaviour
+    {
+        
+    }
+    public class Terbium : MonoBehaviour
+    {
+        
+    }
+    public class Dysprosium : MonoBehaviour
+    {
+        
+    }
+    public class Holmium : MonoBehaviour
+    {
+        
+    }
+    public class Erbium : MonoBehaviour
+    {
+        
+    }
+    public class Thulium : MonoBehaviour
+    {
+        
+    }
+    public class Ytterbium : MonoBehaviour
+    {
+        
+    }
+    public class Lutetium : MonoBehaviour
+    {
+        
+    }
+    public class Hafnium : MonoBehaviour
+    {
+        
+    }
+    public class Tantalum : MonoBehaviour
+    {
+        
+    }
+    public class Tungsten : MonoBehaviour
+    {
+        
+    }
+    public class Rhenium : MonoBehaviour
+    {
+        
+    }
+    public class Osmium : MonoBehaviour
+    {
+        
+    }
+    public class Iridium : MonoBehaviour
+    {
+        
+    }
+    public class Platinum : MonoBehaviour
+    {
+        
+    }
+    public class Gold : MonoBehaviour
+    {
+        
+    }
+    public class Mercury : MonoBehaviour
+    {
+        
+    }
+    public class Thallium : MonoBehaviour
+    {
+        
+    }
+    public class Lead : MonoBehaviour
+    {
+        
+    }
+    public class Bismuth : MonoBehaviour
+    {
+        
+    }
+    public class Polonium : MonoBehaviour
+    {
+        
+    }
+    public class Astatine : MonoBehaviour
+    {
+        
+    }
+    public class Radon : MonoBehaviour
+    {
+        
+    }
+    public class Francium : MonoBehaviour
+    {
+        
+    }
+    public class Radium : MonoBehaviour
+    {
+        
+    }
+    public class Actinium : MonoBehaviour
+    {
+        
+    }
+    public class Thorium : MonoBehaviour
+    {
+        
+    }
+    public class Protactinium : MonoBehaviour
+    {
+        
+    }
+    public class Uranium : MonoBehaviour
+    {
+        
+    }
+    public class Neptunium : MonoBehaviour
+    {
+        
+    }
+    public class Plutonium : MonoBehaviour
+    {
+        
+    }
+    public class Americium : MonoBehaviour
+    {
+        
+    }
+    public class Curium : MonoBehaviour
+    {
+        
+    }
+    public class Berkelium : MonoBehaviour
+    {
+        
+    }
+    public class Californium : MonoBehaviour
+    {
+        
+    }
+    public class Einsteinium : MonoBehaviour
+    {
+        
+    }
+    public class Fermium : MonoBehaviour
+    {
+        
+    }
+    public class Mendelevium : MonoBehaviour
+    {
+        
+    }
+    public class Nobelium : MonoBehaviour
+    {
+        
+    }
+    public class Lawrencium : MonoBehaviour
+    {
+        
+    }
+    public class Rutherfordium : MonoBehaviour
+    {
+        
+    }
+    public class Dubnium : MonoBehaviour
+    {
+        
+    }
+    public class Seoborgium : MonoBehaviour
+    {
+        
+    }
+    public class Bohrium : MonoBehaviour
+    {
+        
+    }
+    public class Hassium : MonoBehaviour
+    {
+        
+    }
+    public class Meitnerium : MonoBehaviour
+    {
+        
+    }
+    public class Darmstadtium : MonoBehaviour
+    {
+        
+    }
+    public class Roentgenium : MonoBehaviour
+    {
+        
+    }
+    public class Copernicium : MonoBehaviour
+    {
+        
+    }
+    public class Nihonium : MonoBehaviour
+    {
+        
+    }
+    public class Flerovium : MonoBehaviour
+    {
+        
+    }
+    public class Moscovium : MonoBehaviour
+    {
+        
+    }
+    public class Livermorium : MonoBehaviour
+    {
+        
+    }
+    public class Tennessine : MonoBehaviour
+    {
+        
+    }
+    public class Oganesson : MonoBehaviour
+    {
+        
+    }
 }
