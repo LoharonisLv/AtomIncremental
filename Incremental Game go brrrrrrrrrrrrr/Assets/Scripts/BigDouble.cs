@@ -6,7 +6,7 @@ using Random = System.Random;
 // (#if UNITY doesn't seem to work). If you happen to know one - please create
 // an issue here https://github.com/Razenpok/BreakInfinity.cs/issues.
 #if UNITY_2017_1_OR_NEWER
-using UnityEngine;
+
 #endif
 
 namespace BreakInfinity
@@ -18,7 +18,7 @@ namespace BreakInfinity
     {
         public const double Tolerance = 1e-18;
 
-        //for example: if two exponents are more than 17 apart, consider adding them together pointless, just return the larger one
+        //for example if two exponents are more than 17 apart, consider adding them together pointless, just return the larger one
         private const int MaxSignificantDigits = 17;
 
         private const long ExpLimit = long.MaxValue;
@@ -340,7 +340,7 @@ namespace BreakInfinity
                 return bigger;
             }
 
-            //have to do this because adding numbers that were once integers but scaled down is imprecise.
+            //Have to do this because adding numbers that were once integers but scaled down is imprecise.
             //Example: 299 + 18
             return Normalize(
                 Math.Round(1e14 * bigger.Mantissa + 1e14 * smaller.Mantissa *
@@ -918,7 +918,7 @@ namespace BreakInfinity
                 }
 
                 // two cases:
-                // 1) exponent is 17 or greater: just print out mantissa with the appropriate number of zeroes after it
+                // 1) exponent is 17 or greater:  print out mantissa with the appropriate number of zeroes after it
                 // 2) exponent is 16 or less: use basic toFixed
 
                 if (value.Exponent >= MaxSignificantDigits)

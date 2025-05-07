@@ -1,9 +1,9 @@
 using UnityEngine;
-
+using System.Collections.Generic;
 
 public class Tabs : MonoBehaviour
 {
-    //Tabs
+    // Declare all CanvasGroups normally (no Inspector assignment needed)
     public CanvasGroup menu;
     public CanvasGroup hydrogenScreen;
     public CanvasGroup heliumScreen;
@@ -124,108 +124,90 @@ public class Tabs : MonoBehaviour
     public CanvasGroup ts;
     public CanvasGroup og;
     public CanvasGroup changelog;
-    
-    //public string[] groupName = { "hydrogenScreen" , "heliumScreen", "menu", "lithiumScreen", "berylliumScreen", "boronScreen", "carbonScreen", "nitrogenScreen", "oxygenScreen", "fluorineScreen", "neonScreen"};
 
-    public void Start()
+    private List<CanvasGroup> tabs;
+    private int currentTabId = -1;
+    private int lastTabBeforeMenu = -1;
+
+    private int menuTabIndex; // this will hold the actual index of the menu tab
+
+    private void Awake()
     {
-        EfficientTabChange(hydrogenScreen);
+        // Manually ordered list to avoid reflection issues
+        tabs = new List<CanvasGroup>
+        {
+            hydrogenScreen, heliumScreen, menu, li, be, b, c, n, o, f, ne, na, mg, 
+            al, si, p, s, cl, ar, k, ca, sc, ti, v, cr, mn, fe, co, ni, cu, zn, ga, 
+            ge, ars, se, br, kr, rb, sr, y, zr, nb, mo, tc, ru, rh, pd, ag, cd, ind, 
+            sn, sb, te, i, xe, cs, ba, la, ce, pr, nd, pm, sm, eu, gd, tb, dy, ho, er, 
+            tm, yb, lu, hf, ta, w, re, os, ir, pt, au, hg, tl, pb, bi, po, at, rn, fr, 
+            ra, ac, th, pa, u, np, pu, am, cm, bk, cf, es, fm, md, no, lr, rf, db, sg, 
+            bh, hs, mt, ds, rg, cn, nh, fl, mc, lv, ts, og, changelog
+        };
+
+        menuTabIndex = tabs.IndexOf(menu);
     }
 
-    
-
-    private void EfficientTabChange(object group)
+    private void Start()
     {
-        CanvasGroup [] groups = new CanvasGroup[120] 
-		{ 
-		hydrogenScreen, heliumScreen, menu, li, be, b, c, n, o, f, ne, na, mg, 
-		al, si, p, s, cl, ar, k, ca, sc, ti, v, cr, mn, fe, co, ni, cu, zn, ga, 
-		ge, ars, se, br, kr, rb, sr, y, zr, nb, mo, tc, ru, rh, pd, ag, cd, ind, 
-		sn, sb, te, i, xe, cs, ba, la, ce, pr, nd, pm, sm, eu, gd, tb, dy, ho, er, 
-		tm, yb, lu, hf, ta, w, re, os, ir, pt, au, hg, tl, pb, bi, po, at, rn, fr, ra, 
-		ac, th, pa, u, np, pu, am, cm, bk, cf, es, fm, md, no, lr, rf, db, sg, bh, hs, mt, 
-		ds, rg, cn, nh, fl, mc, lv, ts, og, changelog
-		};
-    
-        foreach (CanvasGroup g in groups)
+        if (tabs.Count > 0)
         {
-            if (g == group)
-            {
-                ActivateTabs(g);
-            }
-            else
-            {
-                DeactivateTabs(g);
-            }
+            SwitchTabs(0); // Start with Hydrogen tab
         }
     }
 
-    private object[] _tabs;
-    private int currentTabId = -1;
-    private int lastTabBeforeMenu = -1;
-    
     public void SwitchTabs(int id)
-    { 
-        _tabs = new object[]
+    {
+        if (id < 0 || id >= tabs.Count)
         {
-            hydrogenScreen, heliumScreen, menu, li, be, b, c, n, o, f, ne, na, mg, al, si, p, s, cl, ar, k, ca, sc, ti, v,
-            cr, mn, fe, co, ni, cu, zn, ga, ge, ars, se, br, kr, rb, sr, y, zr, nb, mo, tc, ru, rh, pd, ag, cd, ind, sn, sb,
-            te, i, xe, cs, ba, la, ce, pr, nd, pm, sm, eu, gd, tb, dy, ho, er, tm, yb, lu, hf, ta, w, re, os, ir, pt, au, hg,
-            tl, pb, bi, po, at, rn, fr, ra, ac, th, pa, u, np, pu, am, cm, bk, cf, es, fm, md, no, lr, rf, db, sg, bh, hs,
-            mt, ds, rg, cn, nh, fl, mc, lv, ts, og, changelog
-        };
-        if (id < 0 || id >= _tabs.Length)
-        {
-            Debug.Log("Is not assigned");
+            Debug.LogWarning("Invalid tab ID.");
             return;
         }
 
-        // ID for 'menu' is assumed to be 2
-        const int MenuTabId = 2;
-
-        if (id == MenuTabId)
+        if (id == menuTabIndex)
         {
-            if (currentTabId == MenuTabId && lastTabBeforeMenu != -1)
+            // Switching to menu
+            if (currentTabId != menuTabIndex)
             {
-                // Going back to the last tab before the menu
-                EfficientTabChange(_tabs[lastTabBeforeMenu]);
-                currentTabId = lastTabBeforeMenu;
-                lastTabBeforeMenu = -1;
+                lastTabBeforeMenu = currentTabId;
+                SetActiveTab(menuTabIndex);
             }
             else
             {
-                // Going to the menu
-                lastTabBeforeMenu = currentTabId;
-                EfficientTabChange(_tabs[MenuTabId]);
-                currentTabId = MenuTabId;
+                // Back from menu
+                if (lastTabBeforeMenu >= 0)
+                {
+                    SetActiveTab(lastTabBeforeMenu);
+                    lastTabBeforeMenu = -1;
+                }
             }
         }
         else
         {
-            EfficientTabChange(_tabs[id]);
-            currentTabId = id;
+            SetActiveTab(id);
         }
     }
 
+    private void SetActiveTab(int id)
+    {
+        for (int i = 0; i < tabs.Count; i++)
+        {
+            bool isActive = (i == id);
+            SetTabState(tabs[i], isActive);
+        }
 
-    private void ActivateTabs(CanvasGroup group)
-    {
-        group.alpha = 1;
-        group.interactable = true;
-        group.blocksRaycasts = true;
+        currentTabId = id;
     }
-    
-    private void DeactivateTabs(CanvasGroup group)
+
+    private void SetTabState(CanvasGroup group, bool active)
     {
-        group.alpha = 0;
-        group.interactable = false;
-        group.blocksRaycasts = false;
+        group.alpha = active ? 1 : 0;
+        group.interactable = active;
+        group.blocksRaycasts = active;
     }
 
     public void DoExitGame()
     {
         Application.Quit();
     }
-
-    
 }
