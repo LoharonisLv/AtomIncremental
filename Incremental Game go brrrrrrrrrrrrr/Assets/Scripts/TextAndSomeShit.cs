@@ -19,7 +19,7 @@ public class Texts : MonoBehaviour
     {
         hydrogenText.text = "Hydrogen: " + NotationMethod(Hydrogen.BigAssNumber, "F0");
         hydrogenTextPs.text = "Hydrogen/s: " + NotationMethod(Hydrogen.HydrogenGen, "F0");
-        hydrogenClickText.text = "Click for " + NotationMethod(Hydrogen.ClickPower, "F0");
+        hydrogenClickText.text = "Click for " + NotationMethod(Hydrogen.ClickPower, "F0") + " hydrogen";
         HydrogenClickStrengthText.text = "Click strength\nCost: " + NotationMethod(Upgrades.InstantCost(10, 1.07, Upgrades.HClickStrengthLevel), "F0") + "\nPower: 1 hydrogen/click\nLevel: " +
                                          NotationMethod(Upgrades.HClickStrengthLevel, "F0");
         HydrogenClickStrength2Text.text = "Click strength 2\nCost: " + NotationMethod(Upgrades.InstantCost(200, 1.07, Upgrades.HClickStrength2Level), "F0") + "\nPower: 5 hydrogen/click\nLevel: " +
@@ -27,7 +27,7 @@ public class Texts : MonoBehaviour
         HydrogenGenText.text = "Auto clicker, but bad :))))\nCost: " +
                                NotationMethod(Upgrades.InstantCost(80, 1.07, Upgrades.HHydrogenGenLevel), "F0") +
                                "\n1 hydrogen/s\nLevel: " + NotationMethod(Upgrades.HHydrogenGenLevel, "F0");
-        HydrogenGenText.text = "Auto clicker, but bad :))))\nCost: " +
+        HydrogenGen2Text.text = "Auto clicker 2.0\nCost: " +
                                NotationMethod(Upgrades.InstantCost(800, 1.07, Upgrades.HHydrogenGen2Level), "F0") +
                                "\n5 hydrogen/s\nLevel: " + NotationMethod(Upgrades.HHydrogenGen2Level, "F0");
     }

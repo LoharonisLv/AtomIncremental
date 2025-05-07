@@ -9,12 +9,14 @@ namespace BreakInfinity
 
         public void HydrogenClick()
         {
-            Hydrogen.BigAssNumber += (Hydrogen.ClickPower + Upgrades.HClickStrengthLevel +(5*Upgrades.HClickStrength2Level));
+            Hydrogen.BigAssNumber += Hydrogen.ClickPower;
         }
 
         public void Update()
         {
-            Hydrogen.BigAssNumber += (Hydrogen.HydrogenGen + Upgrades.HHydrogenGen2Level + (5*Upgrades.HHydrogenGen2Level)) * Time.deltaTime;
+            Hydrogen.BigAssNumber += Hydrogen.HydrogenGen * Time.deltaTime;
+            Hydrogen.ClickPower = 5*Upgrades.HClickStrength2Level + Upgrades.HClickStrengthLevel;
+            Hydrogen.HydrogenGen = 5*Upgrades.HHydrogenGen2Level + Upgrades.HHydrogenGenLevel;
         }
         
         

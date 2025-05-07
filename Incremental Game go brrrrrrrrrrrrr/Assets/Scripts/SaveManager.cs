@@ -51,6 +51,11 @@ namespace BreakInfinity
             Hydrogen.HydrogenGen = BigDouble.Parse(data.HydrogenGen);
             Hydrogen.HeliumBoostPower = BigDouble.Parse(data.HeliumBoostPower);
             Hydrogen.PercentageBoost = BigDouble.Parse(data.PercentageBoost);
+            Upgrades.HClickStrengthLevel = BigDouble.Parse(data.HClickStrengthLevel);
+            Upgrades.HClickStrength2Level = BigDouble.Parse(data.HClickStrength2Level);
+            Upgrades.HHydrogenGenLevel = BigDouble.Parse(data.HHydrogenGenLevel);
+            Upgrades.HHydrogenGen2Level = BigDouble.Parse(data.HHydrogenGen2Level);
+            
         }
     }
 

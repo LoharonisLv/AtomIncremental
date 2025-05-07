@@ -12,7 +12,7 @@ namespace BreakInfinity
 
         public BigDouble InstantCost(BigDouble startCost, BigDouble power, BigDouble level)
         {
-            BigDouble cost = startCost * Pow(level, power);
+            BigDouble cost = startCost * Pow(power, level);
             return cost;
         }
 
