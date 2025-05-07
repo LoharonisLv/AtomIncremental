@@ -8,19 +8,13 @@ public class Gain : MonoBehaviour
 {
     //classes
     public Hydrogen Hydrogen;
-    public Texts texts;
-    
-    
-    public Text hydrogenTxt; //variables
     public Text clickpowerTxt;
 
-    public Text persec;
+    
     public Text clickupg;
     public Text clickupg2;
     public Text persecupg;
     public Text cpsupg2;
-
-    public BigDouble persecst;
     public BigDouble clickupgcount;
 
     public BigDouble cpscost;
@@ -319,9 +313,9 @@ public class Gain : MonoBehaviour
 
         
 
-        persecst = (cpsupgcount + (cpsUpg2Level * cpsUpg2Power)) * heliumBoost * Pow(1.2, cpsUpg1HeLevel) *
-                   (1 + lithiumBoostH) * Pow(1.3, cpsUpg1LiLevel);
-        persec.text = NotationMethod(persecst, "F0") + " hydrogen/s";
+        //persecst = (cpsupgcount + (cpsUpg2Level * cpsUpg2Power)) * heliumBoost * Pow(1.2, cpsUpg1HeLevel) *
+                   //(1 + lithiumBoostH) * Pow(1.3, cpsUpg1LiLevel);
+        //Hydrogen per second calculation
 
         string clickupgcostString;
         var clickupgcost = 10 * Pow(1.07, clickupgcount);

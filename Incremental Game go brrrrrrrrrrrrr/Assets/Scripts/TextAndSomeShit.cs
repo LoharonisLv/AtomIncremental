@@ -7,10 +7,14 @@ public class Texts : MonoBehaviour
 {
     public Hydrogen Hydrogen;  // Reference to your data script
     public Text hydrogenText;  // Reference to a Text UI component in the scene
-
+    public Text hydrogenTextPs;
+    public Text hydrogenClickText;
+    
     void Update()
     {
         hydrogenText.text = "Hydrogen: " + NotationMethod(Hydrogen.BigAssNumber, "F0");
+        hydrogenTextPs.text = "Hydrogen/s: " + NotationMethod(Hydrogen.HydrogenGen, "F0");
+        hydrogenClickText.text = "Click for " + NotationMethod(Hydrogen.ClickPower, "F0");
     }
     
     private string NotationMethod(BigDouble x, string y)

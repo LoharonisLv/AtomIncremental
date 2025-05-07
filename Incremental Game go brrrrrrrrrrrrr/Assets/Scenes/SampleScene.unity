@@ -6922,17 +6922,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hydrogen: {fileID: 1356262777}
-  texts: {fileID: 1307298890}
-  hydrogenTxt: {fileID: 209742072}
   clickpowerTxt: {fileID: 2145059334}
-  persec: {fileID: 1770189304}
   clickupg: {fileID: 1648792455}
   clickupg2: {fileID: 1169754143}
   persecupg: {fileID: 1706013742}
   cpsupg2: {fileID: 975282334}
-  persecst:
-    mantissa: 0
-    exponent: 0
   clickupgcount:
     mantissa: 0
     exponent: 0
@@ -29452,6 +29446,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hydrogen: {fileID: 1356262777}
   hydrogenText: {fileID: 209742072}
+  hydrogenTextPs: {fileID: 0}
+  hydrogenClickText: {fileID: 2145059334}
 --- !u!1 &1314707087
 GameObject:
   m_ObjectHideFlags: 0
