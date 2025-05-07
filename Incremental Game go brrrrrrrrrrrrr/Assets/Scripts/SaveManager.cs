@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.IO;
+using Unity.VisualScripting;
+
 namespace BreakInfinity
 {
     public class SaveManager : MonoBehaviour
     {
         public Hydrogen Hydrogen;
+        public Upgrades Upgrades;
         private string savePath;
 
         void Awake()
@@ -25,7 +28,11 @@ namespace BreakInfinity
                 ClickPower = Hydrogen.ClickPower.ToString(),
                 HydrogenGen = Hydrogen.HydrogenGen.ToString(),
                 HeliumBoostPower = Hydrogen.HeliumBoostPower.ToString(),
-                PercentageBoost = Hydrogen.PercentageBoost.ToString()
+                PercentageBoost = Hydrogen.PercentageBoost.ToString(),
+                HClickStrengthLevel = Upgrades.HClickStrengthLevel.ToString(),
+                HClickStrength2Level = Upgrades.HClickStrength2Level.ToString(),
+                HHydrogenGenLevel = Upgrades.HHydrogenGenLevel.ToString(),
+                HHydrogenGen2Level = Upgrades.HHydrogenGen2Level.ToString(),
             };
 
             string json = JsonUtility.ToJson(data);
@@ -55,5 +62,9 @@ namespace BreakInfinity
         public string HydrogenGen;
         public string HeliumBoostPower;
         public string PercentageBoost;
+        public string HClickStrengthLevel;
+        public string HClickStrength2Level;
+        public string HHydrogenGenLevel;
+        public string HHydrogenGen2Level;
     }
 }

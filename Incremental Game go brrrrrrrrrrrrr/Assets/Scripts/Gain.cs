@@ -8,24 +8,7 @@ public class Gain : MonoBehaviour
 {
     //classes
     public Hydrogen Hydrogen;
-    public Text clickpowerTxt;
-
     
-    public Text clickupg;
-    public Text clickupg2;
-    public Text persecupg;
-    public Text cpsupg2;
-    public BigDouble clickupgcount;
-
-    public BigDouble cpscost;
-    public BigDouble cpsupgcount;
-
-    public BigDouble clickUpg2Level;
-
-    public BigDouble cpsUpg2Cost;
-    public BigDouble cpsUpg2Power;
-    public BigDouble cpsUpg2Level;
-
     //for prestige
     public Text heliumText;
     public Text heliumGainText1;
@@ -177,20 +160,13 @@ public class Gain : MonoBehaviour
 
     public void Load()
     {
-        
-        
-        cpsUpg2Power = BigDouble.Parse(PlayerPrefs.GetString("cpsUpg2Power", "5"));
         helium = BigDouble.Parse(PlayerPrefs.GetString("helium", "0"));
         heliumGainUpg1Level = BigDouble.Parse(PlayerPrefs.GetString("heliumGainUpg1Level", "0"));
         heliumGainUpg2Level = BigDouble.Parse(PlayerPrefs.GetString("heliumGainUpg2Level", "0"));
         heliumGainUpg3Level = BigDouble.Parse(PlayerPrefs.GetString("heliumGainUpg3Level", "0"));
         cpsUpg1HeLevel = BigDouble.Parse(PlayerPrefs.GetString("cpsUpg1HeLevel", "0"));
-
-        clickUpg2Level = BigDouble.Parse(PlayerPrefs.GetString("clickUpg2Level", "0"));
-        cpsUpg2Level = BigDouble.Parse(PlayerPrefs.GetString("cpsUpg2Level", "0"));
+        
         cpsUpg1LiLevel = BigDouble.Parse(PlayerPrefs.GetString("cpsUpg1LiLevel", "0"));
-        clickupgcount = BigDouble.Parse(PlayerPrefs.GetString("clickupgcount", "0"));
-        cpsupgcount = BigDouble.Parse(PlayerPrefs.GetString("cpsupgcount", "0"));
         maxBuyHbought = bool.Parse(PlayerPrefs.GetString("maxBuyHbought", "false"));
         doubleHe = bool.Parse(PlayerPrefs.GetString("doubleHe", "false"));
         lithiumUnlock = bool.Parse(PlayerPrefs.GetString("lithiumUnlock", "false"));
@@ -225,20 +201,13 @@ public class Gain : MonoBehaviour
 
     public void Save()
     {
-        
-        
-        PlayerPrefs.SetString("cpsUpg2Power", cpsUpg2Power.ToString());
         PlayerPrefs.SetString("helium", helium.ToString());
         PlayerPrefs.SetString("heliumGainUpg1Level", heliumGainUpg1Level.ToString());
         PlayerPrefs.SetString("heliumGainUpg2Level", heliumGainUpg2Level.ToString());
         PlayerPrefs.SetString("heliumGainUpg3Levle", heliumGainUpg3Level.ToString());
         PlayerPrefs.SetString("cpsUpg1HeLevel", cpsUpg1HeLevel.ToString());
-
-        PlayerPrefs.SetString("clickUpg2Level", clickUpg2Level.ToString());
-        PlayerPrefs.SetString("cpsUpg2Level", cpsUpg2Level.ToString());
+        
         PlayerPrefs.SetString("cpsUpg1LiLevel", cpsUpg1LiLevel.ToString());
-        PlayerPrefs.SetString("clickupgcount", clickupgcount.ToString());
-        PlayerPrefs.SetString("cpsupgcount", cpsupgcount.ToString());
         PlayerPrefs.SetString("maxBuyHbought", maxBuyHbought.ToString());
         PlayerPrefs.SetString("doubleHe", doubleHe.ToString());
         PlayerPrefs.SetString("lithiumUnlock", lithiumUnlock.ToString());
@@ -274,10 +243,10 @@ public class Gain : MonoBehaviour
     public void Update()
     {
         
-        buyMaxClickUpg1Text.text = "Buy max 1st hydrogen upgrades [" + BuyMaxClickUpgrade1n() + "]";
+/*buyMaxClickUpg1Text.text = "Buy max 1st hydrogen upgrades [" + BuyMaxClickUpgrade1n() + "]";
         buyMaxClickUpg2Text.text = "Buy max 2nd hydrogen upgrades [" + BuyMaxClickUpgrade2n() + "]";
         buyMaxAutoClicker1Text.text = "Buy max 3rd hydrogen upgrades [" + BuyMaxAutoClicker1n() + "]";
-        buyMaxAutoClicker2Text.text = "Buy max 4th hydrogen upgrades [" + BuyMaxAutoClicker2n() + "]";
+        buyMaxAutoClicker2Text.text = "Buy max 4th hydrogen upgrades [" + BuyMaxAutoClicker2n() + "]";*/
         if (doubleHe == false)
         {
             heliumGain = (150 * Sqrt(Hydrogen.BigAssNumber / 2.25e9) * Pow(1.1, heliumGainUpg1Level) * Pow(1.5, heliumGainUpg2Level) *
@@ -316,30 +285,7 @@ public class Gain : MonoBehaviour
         //persecst = (cpsupgcount + (cpsUpg2Level * cpsUpg2Power)) * heliumBoost * Pow(1.2, cpsUpg1HeLevel) *
                    //(1 + lithiumBoostH) * Pow(1.3, cpsUpg1LiLevel);
         //Hydrogen per second calculation
-
-        string clickupgcostString;
-        var clickupgcost = 10 * Pow(1.07, clickupgcount);
-        clickupgcostString = NotationMethod(clickupgcost, "F0");
-        clickupg.text = "Click strength\nCost: " + clickupgcostString + "\nPower: 1 hydrogen/click\nLevel: " +
-                        NotationMethod(clickupgcount, "F0");
-
-        string clickUpg2CostString;
-        var clickUpg2Cost = 250 * Pow(1.07, clickUpg2Level);
-        clickUpg2CostString = NotationMethod(clickUpg2Cost, "F0");
-        clickupg2.text = "Click strength 2\nCost: " + clickUpg2CostString + "\nPower: 5 hydrogen/click\nLevel: " +
-                         NotationMethod(clickUpg2Level, "F0");
-
-        string cpscostString;
-        var cpscost = 100 * Pow(1.07, cpsupgcount);
-        cpscostString = NotationMethod(cpscost, "F0");
-        persecupg.text = "Auto clicker\n(but bad :) )\n" + heliumBoost.ToString("F0") + " hydrogen/s\nCost: " +
-                         cpscostString + "\nLevel:" + NotationMethod(cpsupgcount, "F0");
-
-        string cpsUpg2CostString;
-        var cpsUpg2Cost = 1000 * Pow(1.07, cpsUpg2Level);
-        cpsUpg2CostString = NotationMethod(cpsUpg2Cost, "F0");
-        cpsupg2.text = "Auto clicker 2.0\n" + (5 * heliumBoost).ToString("F0") + " hydrogen/s\nCost: " +
-                       cpsUpg2CostString + "\nLevel:" + NotationMethod(cpsUpg2Level, "F0");
+        
 
         string heliumGainUpg1CostString;
         var heliumGainUpg1Cost = 1e15 * Pow(1.1, heliumGainUpg1Level);
@@ -382,8 +328,6 @@ public class Gain : MonoBehaviour
         mineEffUpg2CostString = NotationMethod(mineEffUpg2Cost, "F0");
         mineEffUpg2Text.text = "Increase mining speed by 20%\nCost: " + mineEffUpg2CostString + "\nLevel: " +
                                NotationMethod(mineEffUpg2Level, "F0");
-
-        clickpowerTxt.text = "Click for " + NotationMethod(Hydrogen.ClickPower, "F0") + " hydrogen";
 
         if (maxBuyHbought == true)
         {
@@ -595,12 +539,7 @@ public class Gain : MonoBehaviour
         {
             Hydrogen.BigAssNumber = 0;
             Hydrogen.ClickPower = 1;
-            cpsUpg2Power = 5;
-
-            clickUpg2Level = 0;
-            cpsUpg2Level = 0;
-            clickupgcount = 0;
-            cpsupgcount = 0;
+            
             heliumGainUpg1Level = 0;
 
             helium += heliumGain;
@@ -613,12 +552,7 @@ public class Gain : MonoBehaviour
         {
             Hydrogen.BigAssNumber = 0;
             Hydrogen.ClickPower = 1;
-            cpsUpg2Power = 5;
-
-            clickUpg2Level = 0;
-            cpsUpg2Level = 0;
-            clickupgcount = 0;
-            cpsupgcount = 0;
+            
             heliumGainUpg1Level = 0;
             heliumGainUpg2Level = 0;
             cpsUpg1HeLevel = 0;
@@ -644,12 +578,7 @@ public class Gain : MonoBehaviour
         {
             Hydrogen.BigAssNumber = 0;
             Hydrogen.ClickPower = 1;
-            cpsUpg2Power = 5;
-
-            clickUpg2Level = 0;
-            cpsUpg2Level = 0;
-            clickupgcount = 0;
-            cpsupgcount = 0;
+            
             heliumGainUpg1Level = 0;
             heliumGainUpg2Level = 0;
             cpsUpg1HeLevel = 0;
@@ -740,17 +669,8 @@ public class Gain : MonoBehaviour
     {
         switch (upgradeID)
         {
-            case "C1":
-                var cost1 = 10 * Pow(1.07, clickupgcount);
-                if (Hydrogen.BigAssNumber >= cost1)
-                {
-                    clickupgcount += 1;
-                    Hydrogen.BigAssNumber -= cost1;
-                    Hydrogen.ClickPower += 1;
-                }
-
-                break;
-            case "C1MAX":
+            
+           /* case "C1MAX":
                 var b = 10;
                 var c = Hydrogen.BigAssNumber;
                 var r = 1.07;
@@ -765,17 +685,6 @@ public class Gain : MonoBehaviour
                     Hydrogen.BigAssNumber -= cost2;
                     Hydrogen.ClickPower += n;
                 }
-
-                break;
-            case "C2":
-                var cost4 = 250 * Pow(1.07, clickUpg2Level);
-                if (Hydrogen.BigAssNumber >= cost4)
-                {
-                    clickUpg2Level++;
-                    Hydrogen.BigAssNumber -= cost4;
-                    Hydrogen.ClickPower += 5;
-                }
-
                 break;
             case "C2MAX":
                 var b1 = 250;
@@ -794,15 +703,6 @@ public class Gain : MonoBehaviour
                 }
 
                 break;
-            case "A1":
-                var cost5 = 100 * Pow(1.07, cpsupgcount);
-                if (Hydrogen.BigAssNumber >= cost5)
-                {
-                    cpsupgcount++;
-                    Hydrogen.BigAssNumber -= cost5;
-                }
-
-                break;
             case "A1MAX":
                 var b2 = 100;
                 var c2 = Hydrogen.BigAssNumber;
@@ -816,15 +716,6 @@ public class Gain : MonoBehaviour
                 {
                     cpsupgcount += Convert.ToInt32(n2.ToDouble());
                     Hydrogen.BigAssNumber -= cost6;
-                }
-
-                break;
-            case "A2":
-                var cost7 = 1000 * Pow(1.07, cpsUpg2Level);
-                if (Hydrogen.BigAssNumber >= cost7)
-                {
-                    cpsUpg2Level++;
-                    Hydrogen.BigAssNumber -= cost7;
                 }
 
                 break;
@@ -846,7 +737,7 @@ public class Gain : MonoBehaviour
                 break;
             default:
                 Debug.Log(message: "No upgrade found");
-                break;
+                break;*/
             case "HeG1":
                 var cost = 1e15 * Pow(1.1, heliumGainUpg1Level);
                 if (Hydrogen.BigAssNumber >= cost)
@@ -1039,7 +930,7 @@ public class Gain : MonoBehaviour
         }
     }
 
-    public BigDouble BuyMaxClickUpgrade1n()
+    /*public BigDouble BuyMaxClickUpgrade1n()
     {
         var b = 10;
         var c = Hydrogen.BigAssNumber;
@@ -1077,7 +968,7 @@ public class Gain : MonoBehaviour
         var k = cpsUpg2Level;
         var n = Floor(Log(((c * (r - 1)) / (b * Pow(r, k))) + 1, r));
         return n;
-    }
+    }*/
 
     public void wipeSave()
     {
