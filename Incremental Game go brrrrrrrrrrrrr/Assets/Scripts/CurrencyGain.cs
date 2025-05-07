@@ -10,6 +10,13 @@ namespace BreakInfinity
         {
             Hydrogen.BigAssNumber += Hydrogen.ClickPower;
         }
+
+        public void Update()
+        {
+            Hydrogen.BigAssNumber += Hydrogen.HydrogenGen * Time.deltaTime;
+        }
+        
+        
         
     }
 }
