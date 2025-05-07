@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Curium
+    public class Curium : MonoBehaviour
     {
         
     }

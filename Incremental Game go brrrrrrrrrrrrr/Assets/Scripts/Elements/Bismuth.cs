@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Bismuth
+    public class Bismuth : MonoBehaviour
     {
         
     }

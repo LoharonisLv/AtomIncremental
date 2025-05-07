@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Lutetium
+    public class Lutetium : MonoBehaviour
     {
         
     }

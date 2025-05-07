@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Calcium
+    public class Calcium : MonoBehaviour
     {
         
     }

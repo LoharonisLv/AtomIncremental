@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Europium
+    public class Europium : MonoBehaviour
     {
         
     }

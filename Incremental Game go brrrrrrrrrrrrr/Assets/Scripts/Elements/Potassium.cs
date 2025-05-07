@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Potassium
+    public class Potassium : MonoBehaviour
     {
         
     }

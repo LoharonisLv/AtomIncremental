@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Lawrencium
+    public class Lawrencium : MonoBehaviour
     {
         
     }

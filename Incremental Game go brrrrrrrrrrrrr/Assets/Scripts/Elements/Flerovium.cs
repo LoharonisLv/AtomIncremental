@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Flerovium
+    public class Flerovium : MonoBehaviour
     {
         
     }

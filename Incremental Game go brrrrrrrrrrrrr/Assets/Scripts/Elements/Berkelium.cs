@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Berkelium
+    public class Berkelium : MonoBehaviour
     {
         
     }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Yttrium
+    public class Yttrium : MonoBehaviour
     {
         
     }

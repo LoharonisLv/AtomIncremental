@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Xenon
+    public class Xenon : MonoBehaviour
     {
         
     }

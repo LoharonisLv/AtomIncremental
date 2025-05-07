@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Phophorus
+    public class Phophorus : MonoBehaviour
     {
         
     }

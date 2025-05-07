@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Californium
+    public class Californium : MonoBehaviour
     {
         
     }

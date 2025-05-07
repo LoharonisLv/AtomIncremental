@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Samarium
+    public class Samarium : MonoBehaviour
     {
         
     }

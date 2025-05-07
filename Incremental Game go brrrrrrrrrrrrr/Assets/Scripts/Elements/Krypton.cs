@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Krypton
+    public class Krypton : MonoBehaviour
     {
         
     }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Rubidium
+    public class Rubidium : MonoBehaviour
     {
         
     }

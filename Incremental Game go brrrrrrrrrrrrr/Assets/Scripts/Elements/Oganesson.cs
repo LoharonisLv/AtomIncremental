@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Oganesson
+    public class Oganesson : MonoBehaviour
     {
         
     }

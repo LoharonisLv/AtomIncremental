@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Astatine
+    public class Astatine : MonoBehaviour
     {
         
     }

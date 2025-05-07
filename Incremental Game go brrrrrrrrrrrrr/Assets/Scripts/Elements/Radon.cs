@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Radon
+    public class Radon : MonoBehaviour
     {
         
     }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Dubnium
+    public class Dubnium : MonoBehaviour
     {
         
     }

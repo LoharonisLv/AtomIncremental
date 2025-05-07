@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Promethium
+    public class Promethium : MonoBehaviour
     {
         
     }

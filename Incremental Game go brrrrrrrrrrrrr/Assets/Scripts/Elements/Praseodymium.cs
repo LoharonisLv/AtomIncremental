@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Praseodymium
+    public class Praseodymium : MonoBehaviour
     {
         
     }

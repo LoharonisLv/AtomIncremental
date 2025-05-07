@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Mercury
+    public class Mercury : MonoBehaviour
     {
         
     }

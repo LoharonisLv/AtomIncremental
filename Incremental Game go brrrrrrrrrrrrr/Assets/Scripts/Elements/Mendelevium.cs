@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Mendelevium
+    public class Mendelevium : MonoBehaviour
     {
         
     }

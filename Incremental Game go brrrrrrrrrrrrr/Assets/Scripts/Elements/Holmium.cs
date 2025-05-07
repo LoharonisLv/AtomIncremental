@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Holmium
+    public class Holmium : MonoBehaviour
     {
         
     }

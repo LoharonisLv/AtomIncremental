@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Copernicium
+    public class Copernicium : MonoBehaviour
     {
         
     }

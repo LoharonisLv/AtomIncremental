@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Radium
+    public class Radium : MonoBehaviour
     {
         
     }

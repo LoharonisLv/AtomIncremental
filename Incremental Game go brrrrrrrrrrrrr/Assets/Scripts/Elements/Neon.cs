@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Neon
+    public class Neon : MonoBehaviour
     {
         
     }

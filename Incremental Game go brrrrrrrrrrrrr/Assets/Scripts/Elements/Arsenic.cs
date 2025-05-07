@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Arsenic
+    public class Arsenic : MonoBehaviour
     {
         
     }

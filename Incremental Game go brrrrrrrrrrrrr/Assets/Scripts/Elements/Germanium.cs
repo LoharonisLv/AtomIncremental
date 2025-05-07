@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Germanium
+    public class Germanium : MonoBehaviour
     {
         
     }

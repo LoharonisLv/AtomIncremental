@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Erbium
+    public class Erbium : MonoBehaviour
     {
         
     }

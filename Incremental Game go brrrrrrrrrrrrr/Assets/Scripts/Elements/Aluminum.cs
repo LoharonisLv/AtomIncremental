@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Aluminum
+    public class Aluminum : MonoBehaviour
     {
         
     }

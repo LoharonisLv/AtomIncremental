@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Fermium
+    public class Fermium : MonoBehaviour
     {
         
     }

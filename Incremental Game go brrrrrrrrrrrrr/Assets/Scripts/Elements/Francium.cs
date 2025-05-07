@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Francium
+    public class Francium : MonoBehaviour
     {
         
     }

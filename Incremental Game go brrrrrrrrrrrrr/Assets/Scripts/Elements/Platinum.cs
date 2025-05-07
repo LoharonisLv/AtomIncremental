@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Platinum
+    public class Platinum : MonoBehaviour
     {
         
     }

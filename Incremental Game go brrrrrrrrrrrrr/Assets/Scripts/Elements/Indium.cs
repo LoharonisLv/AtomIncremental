@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Indium
+    public class Indium : MonoBehaviour
     {
         
     }

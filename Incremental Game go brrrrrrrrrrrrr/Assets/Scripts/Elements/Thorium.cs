@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Thorium
+    public class Thorium : MonoBehaviour
     {
         
     }

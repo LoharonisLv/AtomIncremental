@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Osmium
+    public class Osmium : MonoBehaviour
     {
         
     }

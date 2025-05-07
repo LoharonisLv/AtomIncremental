@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Cesium
+    public class Cesium : MonoBehaviour
     {
         
     }

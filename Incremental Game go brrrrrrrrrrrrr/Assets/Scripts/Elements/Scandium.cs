@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Scandium
+    public class Scandium : MonoBehaviour
     {
         
     }

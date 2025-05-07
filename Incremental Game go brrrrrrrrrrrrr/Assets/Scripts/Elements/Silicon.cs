@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Silicon
+    public class Silicon : MonoBehaviour
     {
         
     }

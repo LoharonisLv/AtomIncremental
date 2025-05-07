@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Darmstadtium
+    public class Darmstadtium : MonoBehaviour
     {
         
     }

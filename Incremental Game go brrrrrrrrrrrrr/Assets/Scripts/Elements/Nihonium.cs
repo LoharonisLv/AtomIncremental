@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Nihonium
+    public class Nihonium : MonoBehaviour
     {
         
     }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Ytterbium
+    public class Ytterbium : MonoBehaviour
     {
         
     }

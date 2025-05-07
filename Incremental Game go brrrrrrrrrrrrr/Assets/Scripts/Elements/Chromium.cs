@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Chromium
+    public class Chromium : MonoBehaviour
     {
         
     }

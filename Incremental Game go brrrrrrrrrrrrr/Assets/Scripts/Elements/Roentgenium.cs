@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Roentgenium
+    public class Roentgenium : MonoBehaviour
     {
         
     }

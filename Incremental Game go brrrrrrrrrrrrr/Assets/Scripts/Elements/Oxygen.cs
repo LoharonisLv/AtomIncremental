@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Oxygen
+    public class Oxygen : MonoBehaviour
     {
         
     }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Selenium
+    public class Selenium : MonoBehaviour
     {
         
     }

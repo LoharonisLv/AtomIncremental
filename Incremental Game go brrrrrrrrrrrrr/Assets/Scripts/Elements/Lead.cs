@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Lead
+    public class Lead : MonoBehaviour
     {
         
     }

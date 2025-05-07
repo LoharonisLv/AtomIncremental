@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Sodium
+    public class Sodium : MonoBehaviour
     {
         
     }

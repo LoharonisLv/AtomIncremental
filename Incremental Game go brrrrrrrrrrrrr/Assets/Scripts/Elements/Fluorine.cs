@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Fluorine
+    public class Fluorine : MonoBehaviour
     {
         
     }

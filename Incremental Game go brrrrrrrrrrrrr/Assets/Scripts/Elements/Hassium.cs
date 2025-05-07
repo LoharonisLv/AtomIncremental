@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Hassium
+    public class Hassium : MonoBehaviour
     {
         
     }

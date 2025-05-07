@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Rhenium
+    public class Rhenium : MonoBehaviour
     {
         
     }

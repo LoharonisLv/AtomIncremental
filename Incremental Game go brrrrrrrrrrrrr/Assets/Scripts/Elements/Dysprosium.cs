@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Dysprosium
+    public class Dysprosium : MonoBehaviour
     {
         
     }

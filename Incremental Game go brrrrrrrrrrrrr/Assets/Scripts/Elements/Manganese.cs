@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Manganese
+    public class Manganese : MonoBehaviour
     {
         
     }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Seaborgium
+    public class Seaborgium : MonoBehaviour
     {
         
     }

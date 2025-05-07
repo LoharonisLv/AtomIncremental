@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Polonium
+    public class Polonium : MonoBehaviour
     {
         
     }

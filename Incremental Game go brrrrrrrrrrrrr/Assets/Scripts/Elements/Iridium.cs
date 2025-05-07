@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Iridium
+    public class Iridium : MonoBehaviour
     {
         
     }

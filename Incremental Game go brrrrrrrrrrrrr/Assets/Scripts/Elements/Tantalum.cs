@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace BreakInfinity
 {
-    public class Tantalum
+    public class Tantalum : MonoBehaviour
     {
         
     }
