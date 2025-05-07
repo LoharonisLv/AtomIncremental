@@ -20,6 +20,7 @@ namespace BreakInfinity
         {
             if (Hydrogen.BigAssNumber >= InstantCost(10, 1.07, HClickStrengthLevel))
             {
+                Hydrogen.BigAssNumber -= InstantCost(10, 1.07, HClickStrengthLevel);
                 HClickStrengthLevel++;
             }
         }
@@ -28,6 +29,7 @@ namespace BreakInfinity
         {
             if (Hydrogen.BigAssNumber >= InstantCost(200, 1.07, HClickStrength2Level))
             {
+                Hydrogen.BigAssNumber -= InstantCost(200, 1.07, HClickStrength2Level);
                 HClickStrength2Level++;
             }
         }
@@ -36,6 +38,7 @@ namespace BreakInfinity
         {
             if (Hydrogen.BigAssNumber >= InstantCost(75, 1.07, HHydrogenGenLevel))
             {
+                Hydrogen.BigAssNumber -= InstantCost(75, 1.07, HHydrogenGenLevel);
                 HHydrogenGenLevel++;
             }
         }
@@ -44,6 +47,7 @@ namespace BreakInfinity
         {
             if (Hydrogen.BigAssNumber >= InstantCost(800, 1.07, HHydrogenGen2Level))
             {
+                Hydrogen.BigAssNumber -= InstantCost(800, 1.07, HHydrogenGen2Level);
                 HHydrogenGen2Level++;
             }
         }
