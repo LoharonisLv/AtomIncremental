@@ -1,4 +1,5 @@
-﻿namespace BreakInfinity.Elements
+﻿using UnityEngine;
+namespace BreakInfinity
 {
     public class Oganesson
     {
