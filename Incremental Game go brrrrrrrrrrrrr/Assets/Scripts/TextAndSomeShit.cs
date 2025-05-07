@@ -24,7 +24,7 @@ public class Texts : MonoBehaviour
                                          NotationMethod(Upgrades.HClickStrengthLevel, "F0");
         HydrogenClickStrength2Text.text = "Click strength 2\nCost: " + NotationMethod(Upgrades.InstantCost(200, 1.07, Upgrades.HClickStrength2Level), "F0") + "\nPower: 5 hydrogen/click\nLevel: " +
                                          NotationMethod(Upgrades.HClickStrength2Level, "F0");
-        HydrogenGenText.text = "Auto clicker, but bad :))))\nCost: " +
+        HydrogenGenText.text = "Auto clicker\nCost: " +
                                NotationMethod(Upgrades.InstantCost(80, 1.07, Upgrades.HHydrogenGenLevel), "F0") +
                                "\n1 hydrogen/s\nLevel: " + NotationMethod(Upgrades.HHydrogenGenLevel, "F0");
         HydrogenGen2Text.text = "Auto clicker 2.0\nCost: " +
