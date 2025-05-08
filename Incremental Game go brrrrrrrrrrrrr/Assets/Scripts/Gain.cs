@@ -247,16 +247,7 @@ public class Gain : MonoBehaviour
         buyMaxClickUpg2Text.text = "Buy max 2nd hydrogen upgrades [" + BuyMaxClickUpgrade2n() + "]";
         buyMaxAutoClicker1Text.text = "Buy max 3rd hydrogen upgrades [" + BuyMaxAutoClicker1n() + "]";
         buyMaxAutoClicker2Text.text = "Buy max 4th hydrogen upgrades [" + BuyMaxAutoClicker2n() + "]";*/
-        if (doubleHe == false)
-        {
-            heliumGain = (150 * Sqrt(Hydrogen.BigAssNumber / 2.25e9) * Pow(1.1, heliumGainUpg1Level) * Pow(1.5, heliumGainUpg2Level) *
-                          (1 + lithiumBoostHe) * Pow(1.25, heliumGainUpg3Level));
-        }
-        else
-        {
-            heliumGain = 2 * (150 * Sqrt(Hydrogen.BigAssNumber / 2.25e9)) * Pow(1.1, heliumGainUpg1Level) * Pow(1.5,
-                heliumGainUpg2Level * (1 + lithiumBoostHe) * Pow(1.25, heliumGainUpg3Level));
-        }
+       
 
         if (biggerHeBoostCheck == false)
         {
@@ -268,8 +259,7 @@ public class Gain : MonoBehaviour
         }
 
         berylliumBoost = 1 + (0.04 * berylliumMines);
-        heliumGainText1.text = "Do nuclear fusion:\n+" + Floor(heliumGain).ToString("F0") + " helium";
-        heliumGainText2.text = "Do nuclear fusion:\n+" + Floor(heliumGain).ToString("F0") + " helium";
+        
 
         heliumText.text = "Helium: " + NotationMethod(helium, "F0") + "\n" + NotationMethod(heliumBoost, "F2") +
                           "x boost";

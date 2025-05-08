@@ -6,6 +6,7 @@ using static BreakInfinity.BigDouble;
 public class Texts : MonoBehaviour
 {
     public Hydrogen Hydrogen;
+    public Helium helium;
     public Upgrades Upgrades;
     public Text hydrogenText;  // Reference to a Text UI component in the scene
     public Text hydrogenTextPs;
@@ -14,6 +15,9 @@ public class Texts : MonoBehaviour
     public Text HydrogenClickStrength2Text;
     public Text HydrogenGenText;
     public Text HydrogenGen2Text;
+    public Text heliumText;
+    public Text heliumGainText1;
+    public Text heliumGainText2;
     
     void Update()
     {
@@ -30,6 +34,9 @@ public class Texts : MonoBehaviour
         HydrogenGen2Text.text = "Auto clicker 2.0\nCost: " +
                                NotationMethod(Upgrades.InstantCost(800, 1.07, Upgrades.HHydrogenGen2Level), "F0") +
                                "\n5 hydrogen/s\nLevel: " + NotationMethod(Upgrades.HHydrogenGen2Level, "F0");
+        heliumGainText1.text = "Do nuclear fusion:\n+" + Floor(helium.HeliumGain).ToString("F0") + " helium";
+        heliumGainText2.text = "Do nuclear fusion:\n+" + Floor(helium.HeliumGain).ToString("F0") + " helium";
+        heliumText.text = "Helium: " + NotationMethod(helium.BigAssNumber,"F0");
     }
     
     private string NotationMethod(BigDouble x, string y)

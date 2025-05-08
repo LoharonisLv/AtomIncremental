@@ -8,6 +8,7 @@ namespace BreakInfinity
     {
         public Hydrogen Hydrogen;
         public Upgrades Upgrades;
+        public Helium helium;
         private string savePath;
 
         void Awake()
@@ -33,6 +34,8 @@ namespace BreakInfinity
                 HClickStrength2Level = Upgrades.HClickStrength2Level.ToString(),
                 HHydrogenGenLevel = Upgrades.HHydrogenGenLevel.ToString(),
                 HHydrogenGen2Level = Upgrades.HHydrogenGen2Level.ToString(),
+                Helium=helium.BigAssNumber.ToString(),
+                DoubleHelium = helium.DoubleHelium.ToString(),
             };
 
             string json = JsonUtility.ToJson(data);
@@ -55,7 +58,8 @@ namespace BreakInfinity
             Upgrades.HClickStrength2Level = BigDouble.Parse(data.HClickStrength2Level);
             Upgrades.HHydrogenGenLevel = BigDouble.Parse(data.HHydrogenGenLevel);
             Upgrades.HHydrogenGen2Level = BigDouble.Parse(data.HHydrogenGen2Level);
-            
+            helium.BigAssNumber = BigDouble.Parse(data.Helium);
+            helium.DoubleHelium = bool.Parse(data.DoubleHelium);
         }
     }
 
@@ -71,5 +75,7 @@ namespace BreakInfinity
         public string HClickStrength2Level;
         public string HHydrogenGenLevel;
         public string HHydrogenGen2Level;
+        public string Helium;
+        public string DoubleHelium;
     }
 }

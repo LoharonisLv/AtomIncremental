@@ -9324,6 +9324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hydrogen: {fileID: 1356262777}
   Upgrades: {fileID: 1680943471}
+  helium: {fileID: 639955134}
 --- !u!4 &404752940
 Transform:
   m_ObjectHideFlags: 0
@@ -11306,6 +11307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hydrogen: {fileID: 1356262777}
   Upgrades: {fileID: 1680943471}
+  helium: {fileID: 639955134}
 --- !u!1 &512217846
 GameObject:
   m_ObjectHideFlags: 0
@@ -23941,8 +23943,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 029ca669f7ad45b3b13c653ef50fd4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gain: {fileID: 275519047}
   helium: {fileID: 639955134}
   Hydrogen: {fileID: 1356262777}
+  upgrades: {fileID: 1680943471}
 --- !u!1 &1086980819
 GameObject:
   m_ObjectHideFlags: 0
@@ -29490,6 +29494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hydrogen: {fileID: 1356262777}
+  helium: {fileID: 639955134}
   Upgrades: {fileID: 1680943471}
   hydrogenText: {fileID: 209742072}
   hydrogenTextPs: {fileID: 1770189304}
@@ -29498,6 +29503,9 @@ MonoBehaviour:
   HydrogenClickStrength2Text: {fileID: 1169754143}
   HydrogenGenText: {fileID: 1706013742}
   HydrogenGen2Text: {fileID: 975282334}
+  heliumText: {fileID: 96128538}
+  heliumGainText1: {fileID: 615501452}
+  heliumGainText2: {fileID: 615501452}
 --- !u!1 &1314707087
 GameObject:
   m_ObjectHideFlags: 0
@@ -39349,8 +39357,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 275519047}
-        m_TargetAssemblyTypeName: Gain, Assembly-CSharp
+      - m_Target: {fileID: 1083803437}
+        m_TargetAssemblyTypeName: BreakInfinity.Functions, Assembly-CSharp
         m_MethodName: NuclearFusion
         m_Mode: 1
         m_Arguments:
@@ -40111,8 +40119,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 275519047}
-        m_TargetAssemblyTypeName: Gain, Assembly-CSharp
+      - m_Target: {fileID: 1083803437}
+        m_TargetAssemblyTypeName: BreakInfinity.Functions, Assembly-CSharp
         m_MethodName: NuclearFusion
         m_Mode: 1
         m_Arguments:
