@@ -12,6 +12,7 @@ namespace BreakInfinity
         public BigDouble ClickPower = 1;
         public BigDouble HydrogenGen = 0;
         public BigDouble PercentageBoost = 0;
+		public bool MaxBuyerCheck = false;
     }
 }
     

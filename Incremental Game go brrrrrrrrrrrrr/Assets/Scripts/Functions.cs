@@ -36,7 +36,7 @@ namespace BreakInfinity
         {
             if (helium.DoubleHelium == false)
             {
-                helium.HeliumGain = (150 * Sqrt(Hydrogen.BigAssNumber / 2.25e9) * Pow(1.1, gain.heliumGainUpg1Level) * Pow(1.5, gain.heliumGainUpg2Level) *
+                helium.HeliumGain = (150 * Sqrt(Hydrogen.BigAssNumber / 2.25e9) * Pow(1.1, upgrades.HHeliumGain1Level) * Pow(1.5, gain.heliumGainUpg2Level) *
                               (1 + gain.lithiumBoostHe) * Pow(1.25, gain.heliumGainUpg3Level));
             }
             else

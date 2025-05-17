@@ -5,10 +5,13 @@ namespace BreakInfinity
     public class Upgrades : MonoBehaviour
     {
         public Hydrogen Hydrogen;
+        public Helium helium;
         public BigDouble HClickStrengthLevel;
         public BigDouble HClickStrength2Level;
         public BigDouble HHydrogenGenLevel;
         public BigDouble HHydrogenGen2Level;
+        public BigDouble HHeliumGain1Level;
+        public CanvasGroup hMaxBuyersGroup;
 
         public BigDouble InstantCost(BigDouble startCost, BigDouble power, BigDouble level)
         {
@@ -49,6 +52,26 @@ namespace BreakInfinity
             {
                 Hydrogen.BigAssNumber -= InstantCost(800, 1.07, HHydrogenGen2Level);
                 HHydrogenGen2Level++;
+            }
+        }
+        public void HHeliumGain()
+        {
+            if (Hydrogen.BigAssNumber >= InstantCost(1e15, 1.1, HHeliumGain1Level))
+            {
+                Hydrogen.BigAssNumber -= InstantCost(1e15, 1.1, HHeliumGain1Level);
+                HHeliumGain1Level++;
+            }
+        }
+
+        public void UnlockMaxBuyers()
+        {
+            if (Hydrogen.BigAssNumber >= 1e7 && Hydrogen.MaxBuyerCheck == false)
+            {
+                Hydrogen.BigAssNumber -= 1e7;
+                Hydrogen.MaxBuyerCheck = true;
+                hMaxBuyersGroup.alpha = 1;
+                hMaxBuyersGroup.blocksRaycasts = true;
+                hMaxBuyersGroup.interactable = true;
             }
         }
     }

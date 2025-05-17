@@ -26933,9 +26933,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 275519047}
-        m_TargetAssemblyTypeName: Gain, Assembly-CSharp
-        m_MethodName: MaxBuyHConf
+      - m_Target: {fileID: 1680943471}
+        m_TargetAssemblyTypeName: BreakInfinity.Upgrades, Assembly-CSharp
+        m_MethodName: UnlockMaxBuyers
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29506,6 +29506,8 @@ MonoBehaviour:
   heliumText: {fileID: 96128538}
   heliumGainText1: {fileID: 615501452}
   heliumGainText2: {fileID: 615501452}
+  hHeliumGain1Text: {fileID: 1302028598}
+  unlockMaxBuyerText: {fileID: 1863602360}
 --- !u!1 &1314707087
 GameObject:
   m_ObjectHideFlags: 0
@@ -30228,6 +30230,7 @@ MonoBehaviour:
   PercentageBoost:
     mantissa: 0
     exponent: 0
+  MaxBuyerCheck: 0
 --- !u!224 &1356262778
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35666,6 +35669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hydrogen: {fileID: 1356262777}
+  helium: {fileID: 639955134}
   HClickStrengthLevel:
     mantissa: 0
     exponent: 0
@@ -35678,6 +35682,10 @@ MonoBehaviour:
   HHydrogenGen2Level:
     mantissa: 0
     exponent: 0
+  HHeliumGain1Level:
+    mantissa: 0
+    exponent: 0
+  hMaxBuyersGroup: {fileID: 482848705}
 --- !u!224 &1680943472
 RectTransform:
   m_ObjectHideFlags: 0
@@ -42848,10 +42856,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 275519047}
-        m_TargetAssemblyTypeName: Gain, Assembly-CSharp
-        m_MethodName: BuyUpgrade
-        m_Mode: 5
+      - m_Target: {fileID: 1680943471}
+        m_TargetAssemblyTypeName: BreakInfinity.Upgrades, Assembly-CSharp
+        m_MethodName: HHeliumGain
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

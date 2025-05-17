@@ -18,6 +18,8 @@ public class Texts : MonoBehaviour
     public Text heliumText;
     public Text heliumGainText1;
     public Text heliumGainText2;
+	public Text hHeliumGain1Text;
+    public Text unlockMaxBuyerText;
     
     void Update()
     {
@@ -37,6 +39,15 @@ public class Texts : MonoBehaviour
         heliumGainText1.text = "Do nuclear fusion:\n+" + Floor(helium.HeliumGain).ToString("F0") + " helium";
         heliumGainText2.text = "Do nuclear fusion:\n+" + Floor(helium.HeliumGain).ToString("F0") + " helium";
         heliumText.text = "Helium: " + NotationMethod(helium.BigAssNumber,"F0");
+		hHeliumGain1Text.text = "Increase helium gain by 20%\nCost: "+NotationMethod(Upgrades.InstantCost(1e5, 1.1, Upgrades.HHeliumGain1Level), "F0")+ "\nLevel: "+NotationMethod(Upgrades.HHeliumGain1Level, "F0");
+        if (Hydrogen.MaxBuyerCheck == true)
+        {
+            unlockMaxBuyerText.text = "Unlock Maxbuyers for the first 4 hydrogen upgrades\nBought";
+        }
+        else
+        {
+            unlockMaxBuyerText.text = "Unloc Maxnuyers for the first 4 hydrogen upgrades\nCost: 1e7";
+        }
     }
     
     private string NotationMethod(BigDouble x, string y)
