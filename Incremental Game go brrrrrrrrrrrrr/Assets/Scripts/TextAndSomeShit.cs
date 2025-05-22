@@ -20,6 +20,10 @@ public class Texts : MonoBehaviour
     public Text heliumGainText2;
 	public Text hHeliumGain1Text;
     public Text unlockMaxBuyerText;
+	public Text buyMaxClickUpg1Text;
+    public Text buyMaxClickUpg2Text;
+    public Text buyMaxAutoClicker1Text;
+    public Text buyMaxAutoClicker2Text;
     
     void Update()
     {
@@ -46,8 +50,12 @@ public class Texts : MonoBehaviour
         }
         else
         {
-            unlockMaxBuyerText.text = "Unloc Maxnuyers for the first 4 hydrogen upgrades\nCost: 1e7";
+            unlockMaxBuyerText.text = "Unlock Maxbuyers for the first 4 hydrogen upgrades\nCost: 1e7";
         }
+buyMaxClickUpg1Text.text = "Buy max 1st hydrogen upgrades [" + BuyMaxClickUpgrade1n() + "]";
+        buyMaxClickUpg2Text.text = "Buy max 2nd hydrogen upgrades [" + BuyMaxClickUpgrade2n() + "]";
+        buyMaxAutoClicker1Text.text = "Buy max 3rd hydrogen upgrades [" + BuyMaxAutoClicker1n() + "]";
+        buyMaxAutoClicker2Text.text = "Buy max 4th hydrogen upgrades [" + BuyMaxAutoClicker2n() + "]";
     }
     
     private string NotationMethod(BigDouble x, string y)
@@ -60,6 +68,45 @@ public class Texts : MonoBehaviour
         }
 
         return x.ToString(y);
+    }
+    public BigDouble BuyMaxClickUpgrade1n()
+    {
+        var b = 10;
+        var c = Hydrogen.BigAssNumber;
+        var r = 1.07;
+        var k = Upgrades.HClickStrengthLevel;
+        var n = Floor(Log(((c * (r - 1)) / (b * Pow(r, k))) + 1, r));
+        return n;
+    }
+
+    public BigDouble BuyMaxClickUpgrade2n()
+    {
+        var b = 250;
+        var c = Hydrogen.BigAssNumber;
+        var r = 1.07;
+        var k = Upgrades.HClickStrength2Level;
+        var n = Floor(Log(((c * (r - 1)) / (b * Pow(r, k))) + 1, r));
+        return n;
+    }
+
+    public BigDouble BuyMaxAutoClicker1n()
+    {
+        var b = 100;
+        var c = Hydrogen.BigAssNumber;
+        var r = 1.07;
+        var k = Upgrades.HHydrogenGenLevel;
+        var n = Floor(Log(((c * (r - 1)) / (b * Pow(r, k))) + 1, r));
+        return n;
+    }
+
+    public BigDouble BuyMaxAutoClicker2n()
+    {
+        var b = 1000;
+        var c = Hydrogen.BigAssNumber;
+        var r = 1.07;
+        var k = Upgrades.HHydrogenGen2Level;
+        var n = Floor(Log(((c * (r - 1)) / (b * Pow(r, k))) + 1, r));
+        return n;
     }
 }
 

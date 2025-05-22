@@ -160,14 +160,14 @@ public class Gain : MonoBehaviour
 
     public void Load()
     {
-        helium = BigDouble.Parse(PlayerPrefs.GetString("helium", "0"));
+        
         heliumGainUpg1Level = BigDouble.Parse(PlayerPrefs.GetString("heliumGainUpg1Level", "0"));
         heliumGainUpg2Level = BigDouble.Parse(PlayerPrefs.GetString("heliumGainUpg2Level", "0"));
         heliumGainUpg3Level = BigDouble.Parse(PlayerPrefs.GetString("heliumGainUpg3Level", "0"));
         cpsUpg1HeLevel = BigDouble.Parse(PlayerPrefs.GetString("cpsUpg1HeLevel", "0"));
         
         cpsUpg1LiLevel = BigDouble.Parse(PlayerPrefs.GetString("cpsUpg1LiLevel", "0"));
-        maxBuyHbought = bool.Parse(PlayerPrefs.GetString("maxBuyHbought", "false"));
+        
         doubleHe = bool.Parse(PlayerPrefs.GetString("doubleHe", "false"));
         lithiumUnlock = bool.Parse(PlayerPrefs.GetString("lithiumUnlock", "false"));
         mineUnlock = bool.Parse(PlayerPrefs.GetString("mineUnlock", "false"));
@@ -201,14 +201,11 @@ public class Gain : MonoBehaviour
 
     public void Save()
     {
-        PlayerPrefs.SetString("helium", helium.ToString());
         PlayerPrefs.SetString("heliumGainUpg1Level", heliumGainUpg1Level.ToString());
         PlayerPrefs.SetString("heliumGainUpg2Level", heliumGainUpg2Level.ToString());
         PlayerPrefs.SetString("heliumGainUpg3Levle", heliumGainUpg3Level.ToString());
         PlayerPrefs.SetString("cpsUpg1HeLevel", cpsUpg1HeLevel.ToString());
-        
-        PlayerPrefs.SetString("cpsUpg1LiLevel", cpsUpg1LiLevel.ToString());
-        PlayerPrefs.SetString("maxBuyHbought", maxBuyHbought.ToString());
+        PlayerPrefs.SetString("cpsUpg1LiLevel", cpsUpg1LiLevel.ToString());  
         PlayerPrefs.SetString("doubleHe", doubleHe.ToString());
         PlayerPrefs.SetString("lithiumUnlock", lithiumUnlock.ToString());
         PlayerPrefs.SetString("mineUnlock", mineUnlock.ToString());
@@ -319,16 +316,7 @@ public class Gain : MonoBehaviour
         mineEffUpg2Text.text = "Increase mining speed by 20%\nCost: " + mineEffUpg2CostString + "\nLevel: " +
                                NotationMethod(mineEffUpg2Level, "F0");
 
-        if (maxBuyHbought == true)
-        {
-            maxBuyHText.text = "Unlock max buyers for first 4 upgrades\nBought";
-            ActivateTabs(maxBuyHGroup);
-        }
-        else
-        {
-            maxBuyHText.text = "Unlock max buyers for first 4 upgrades\nCost: 1.00e5";
-            DeactivateTabs(maxBuyHGroup);
-        }
+        
 
         if (doubleHe == true)
         {

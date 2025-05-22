@@ -8737,9 +8737,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 275519047}
-        m_TargetAssemblyTypeName: Gain, Assembly-CSharp
-        m_MethodName: BuyUpgrade
+      - m_Target: {fileID: 1680943471}
+        m_TargetAssemblyTypeName: BreakInfinity.Upgrades, Assembly-CSharp
+        m_MethodName: MaxBuyerUpgrades
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18022,9 +18022,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 275519047}
-        m_TargetAssemblyTypeName: Gain, Assembly-CSharp
-        m_MethodName: BuyUpgrade
+      - m_Target: {fileID: 1680943471}
+        m_TargetAssemblyTypeName: BreakInfinity.Upgrades, Assembly-CSharp
+        m_MethodName: MaxBuyerUpgrades
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29504,10 +29504,14 @@ MonoBehaviour:
   HydrogenGenText: {fileID: 1706013742}
   HydrogenGen2Text: {fileID: 975282334}
   heliumText: {fileID: 96128538}
-  heliumGainText1: {fileID: 615501452}
+  heliumGainText1: {fileID: 137884133}
   heliumGainText2: {fileID: 615501452}
   hHeliumGain1Text: {fileID: 1302028598}
   unlockMaxBuyerText: {fileID: 1863602360}
+  buyMaxClickUpg1Text: {fileID: 168700318}
+  buyMaxClickUpg2Text: {fileID: 302906337}
+  buyMaxAutoClicker1Text: {fileID: 148383736}
+  buyMaxAutoClicker2Text: {fileID: 846638989}
 --- !u!1 &1314707087
 GameObject:
   m_ObjectHideFlags: 0
@@ -30813,9 +30817,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 275519047}
-        m_TargetAssemblyTypeName: Gain, Assembly-CSharp
-        m_MethodName: BuyUpgrade
+      - m_Target: {fileID: 1680943471}
+        m_TargetAssemblyTypeName: BreakInfinity.Upgrades, Assembly-CSharp
+        m_MethodName: MaxBuyerUpgrades
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39232,9 +39236,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 275519047}
-        m_TargetAssemblyTypeName: Gain, Assembly-CSharp
-        m_MethodName: BuyUpgrade
+      - m_Target: {fileID: 1680943471}
+        m_TargetAssemblyTypeName: BreakInfinity.Upgrades, Assembly-CSharp
+        m_MethodName: MaxBuyerUpgrades
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
