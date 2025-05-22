@@ -80,7 +80,7 @@ namespace BreakInfinity
             }
         }
 
-        public void UnlockMaxBuyers() // need debugging, need to fix the not showing of maxbuyers 
+        public void UnlockMaxBuyers()
         {
             if (Hydrogen.BigAssNumber >= 1e7 && Hydrogen.MaxBuyerCheck == false)
             {
