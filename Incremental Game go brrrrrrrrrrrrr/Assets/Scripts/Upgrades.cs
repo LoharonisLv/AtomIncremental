@@ -89,6 +89,8 @@ namespace BreakInfinity
                 
             }
         }
+
+		
         
         
         public void MaxBuyerUpgrades(string upgradeID)
@@ -165,6 +167,8 @@ namespace BreakInfinity
                 Debug.Log(message: "No upgrade found");
                 break;
                 }
+
+            
         }
     }
 }

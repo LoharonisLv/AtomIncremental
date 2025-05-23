@@ -8,6 +8,7 @@ namespace BreakInfinity
         public Helium helium;
         public Hydrogen Hydrogen;
         public Upgrades upgrades;
+        public Lithium lithium;
         public void doubleHeCheck()
         {
             if (helium.BigAssNumber >= 1000 && helium.DoubleHelium == false)
@@ -29,6 +30,15 @@ namespace BreakInfinity
                 upgrades.HHydrogenGenLevel = 0;
                 upgrades.HHydrogenGen2Level = 0;
                 helium.BigAssNumber += helium.HeliumGain;
+            }
+        }
+
+		public void LithiumCheck()
+        {
+            if (helium.BigAssNumber>= 1e6 && helium.DoubleHelium == false)
+            {
+                helium.BigAssNumber -= 1e6;
+                lithium.lithiumCheck = true;
             }
         }
 
