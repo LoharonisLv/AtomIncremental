@@ -13,6 +13,7 @@ namespace BreakInfinity
         public BigDouble HHydrogenGen2Level;
         public BigDouble HHeliumGain1Level;
         public CanvasGroup hMaxBuyersGroup;
+        public BigDouble HeHeliumGainLevel;
 
         public void Update()
         {
@@ -167,8 +168,16 @@ namespace BreakInfinity
                 Debug.Log(message: "No upgrade found");
                 break;
                 }
+        }
 
-            
+        public void HeliumGain2()
+        {
+            if (helium.BigAssNumber>=InstantCost(5, 1.5, HeHeliumGainLevel))
+            {
+                helium.BigAssNumber-=InstantCost(5, 1.5, HeHeliumGainLevel);
+                HeHeliumGainLevel++;
+            }
         }
     }
+   
 }

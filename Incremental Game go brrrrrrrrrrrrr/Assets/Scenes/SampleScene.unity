@@ -2178,10 +2178,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 275519047}
-        m_TargetAssemblyTypeName: Gain, Assembly-CSharp
-        m_MethodName: BuyUpgrade
-        m_Mode: 5
+      - m_Target: {fileID: 1680943471}
+        m_TargetAssemblyTypeName: BreakInfinity.Upgrades, Assembly-CSharp
+        m_MethodName: HeliumGain2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -23947,6 +23947,7 @@ MonoBehaviour:
   helium: {fileID: 639955134}
   Hydrogen: {fileID: 1356262777}
   upgrades: {fileID: 1680943471}
+  lithium: {fileID: 0}
 --- !u!1 &1086980819
 GameObject:
   m_ObjectHideFlags: 0
@@ -28235,7 +28236,7 @@ GameObject:
   - component: {fileID: 1260896388}
   - component: {fileID: 1260896387}
   m_Layer: 0
-  m_Name: Text (Legacy)
+  m_Name: IncHe2Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35690,6 +35691,9 @@ MonoBehaviour:
     mantissa: 0
     exponent: 0
   hMaxBuyersGroup: {fileID: 482848705}
+  HeHeliumGainLevel:
+    mantissa: 0
+    exponent: 0
 --- !u!224 &1680943472
 RectTransform:
   m_ObjectHideFlags: 0

@@ -38,6 +38,8 @@ namespace BreakInfinity
                 DoubleHelium = helium.DoubleHelium.ToString(),
 				HHeliumGain1Level = Upgrades.HHeliumGain1Level.ToString(),
                 MaxBuyersCheck = Hydrogen.MaxBuyerCheck.ToString(),
+				HeHeliumGainLevel = Upgrades.HeHeliumGainLevel.ToString(),
+                
             };
 
             string json = JsonUtility.ToJson(data);
@@ -64,6 +66,7 @@ namespace BreakInfinity
             helium.DoubleHelium = bool.Parse(data.DoubleHelium);
 			Upgrades.HHeliumGain1Level = BigDouble.Parse(data.HHeliumGain1Level);
             Hydrogen.MaxBuyerCheck = bool.Parse(data.MaxBuyersCheck);
+			Upgrades.HeHeliumGainLevel = BigDouble.Parse(data.HeHeliumGainLevel);
         }
     }
 
@@ -83,5 +86,6 @@ namespace BreakInfinity
         public string DoubleHelium;
 		public string HHeliumGain1Level;
         public string MaxBuyersCheck;
+		public string HeHeliumGainLevel;
     }
 }
