@@ -318,23 +318,9 @@ public class Gain : MonoBehaviour
 
         
 
-        if (doubleHe == true)
-        {
-            doubleHeTxt.text = "Double your Helium gain\nBought";
-        }
-        else
-        {
-            doubleHeTxt.text = "Double your Helium gain\nCost: 1000 He";
-        }
+        
 
-        if (lithiumUnlock == true)
-        {
-            lithiumUnlockText.text = "Unlock 1st period reset lithify (t Li tab)\nBought";
-        }
-        else
-        {
-            lithiumUnlockText.text = "Unlock 1st period reset lithify (t Li tab)\nCost: 1.00e6 He";
-        }
+       
 
         if (mineUnlock == true)
         {
@@ -647,92 +633,6 @@ public class Gain : MonoBehaviour
     {
         switch (upgradeID)
         {
-            
-           /* case "C1MAX":
-                var b = 10;
-                var c = Hydrogen.BigAssNumber;
-                var r = 1.07;
-                var k = clickupgcount;
-                var n = Floor(Log(((c * (r - 1)) / (b * Pow(r, k))) + 1, r));
-
-                var cost2 = b * ((Pow(r, k) * (Pow(r, n) - 1)) / (r - 1));
-
-                if (Hydrogen.BigAssNumber >= cost2)
-                {
-                    clickupgcount += Convert.ToInt32(n.ToDouble());
-                    Hydrogen.BigAssNumber -= cost2;
-                    Hydrogen.ClickPower += n;
-                }
-                break;
-            case "C2MAX":
-                var b1 = 250;
-                var c1 = Hydrogen.BigAssNumber;
-                var r1 = 1.07;
-                var k1 = clickUpg2Level;
-                var n1 = Floor(Log(((c1 * (r1 - 1)) / (b1 * Pow(r1, k1))) + 1, r1));
-
-                var cost3 = b1 * ((Pow(r1, k1) * (Pow(r1, n1) - 1)) / (r1 - 1));
-
-                if (Hydrogen.BigAssNumber >= cost3)
-                {
-                    clickUpg2Level += Convert.ToInt32(n1.ToDouble());
-                    Hydrogen.BigAssNumber -= cost3;
-                    Hydrogen.ClickPower += (n1 * 5);
-                }
-
-                break;
-            case "A1MAX":
-                var b2 = 100;
-                var c2 = Hydrogen.BigAssNumber;
-                var r2 = 1.07;
-                var k2 = cpsupgcount;
-                var n2 = Floor(Log(((c2 * (r2 - 1)) / (b2 * Pow(r2, k2))) + 1, r2));
-
-                var cost6 = b2 * ((Pow(r2, k2) * (Pow(r2, n2) - 1)) / (r2 - 1));
-
-                if (Hydrogen.BigAssNumber >= cost6)
-                {
-                    cpsupgcount += Convert.ToInt32(n2.ToDouble());
-                    Hydrogen.BigAssNumber -= cost6;
-                }
-
-                break;
-            case "A2MAX":
-                var b3 = 1000;
-                var c3 = Hydrogen.BigAssNumber;
-                var r3 = 1.07;
-                var k3 = cpsUpg2Level;
-                var n3 = Floor(Log(((c3 * (r3 - 1)) / (b3 * Pow(r3, k3))) + 1, r3));
-
-                var cost8 = b3 * ((Pow(r3, k3) * (Pow(r3, n3) - 1)) / (r3 - 1));
-
-                if (Hydrogen.BigAssNumber >= cost8)
-                {
-                    cpsUpg2Level += Convert.ToInt32(n3.ToDouble());
-                    Hydrogen.BigAssNumber -= cost8;
-                }
-
-                break;
-            default:
-                Debug.Log(message: "No upgrade found");
-                break;*/
-            case "HeG1":
-                var cost = 1e15 * Pow(1.1, heliumGainUpg1Level);
-                if (Hydrogen.BigAssNumber >= cost)
-                {
-                    heliumGainUpg1Level++;
-                }
-
-                break;
-            case "HeG2":
-                var cost9 = 5 * Pow(1.5, heliumGainUpg2Level);
-                if (helium >= cost9)
-                {
-                    helium -= cost9;
-                    heliumGainUpg2Level++;
-                }
-
-                break;
             case "A1He":
                 var cost10 = 2 * Pow(1.5, cpsUpg1HeLevel);
                 if (helium >= cost10)

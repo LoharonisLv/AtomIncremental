@@ -8,6 +8,7 @@ public class Texts : MonoBehaviour
     public Hydrogen Hydrogen;
     public Helium helium;
     public Upgrades Upgrades;
+    public Lithium lithium;
     public Text hydrogenText;  // Reference to a Text UI component in the scene
     public Text hydrogenTextPs;
     public Text hydrogenClickText;
@@ -24,6 +25,8 @@ public class Texts : MonoBehaviour
     public Text buyMaxClickUpg2Text;
     public Text buyMaxAutoClicker1Text;
     public Text buyMaxAutoClicker2Text;
+    public Text doubleHeTxt;
+    public Text lithiumUnlockText;
     
     void Update()
     {
@@ -56,6 +59,22 @@ buyMaxClickUpg1Text.text = "Buy max 1st hydrogen upgrades [" + BuyMaxClickUpgrad
         buyMaxClickUpg2Text.text = "Buy max 2nd hydrogen upgrades [" + BuyMaxClickUpgrade2n() + "]";
         buyMaxAutoClicker1Text.text = "Buy max 3rd hydrogen upgrades [" + BuyMaxAutoClicker1n() + "]";
         buyMaxAutoClicker2Text.text = "Buy max 4th hydrogen upgrades [" + BuyMaxAutoClicker2n() + "]";
+        if (helium.DoubleHelium == true)
+        {
+            doubleHeTxt.text = "Double your Helium gain\nBought";
+        }
+        else
+        {
+            doubleHeTxt.text = "Double your Helium gain\nCost: 1000 He";
+        }
+        if (lithium.lithiumCheck == true)
+        {
+            lithiumUnlockText.text = "Unlock 1st period reset lithify (t Li tab)\nBought";
+        }
+        else
+        {
+            lithiumUnlockText.text = "Unlock 1st period reset lithify (t Li tab)\nCost: 1.00e6 He";
+        }
     }
     
     private string NotationMethod(BigDouble x, string y)
