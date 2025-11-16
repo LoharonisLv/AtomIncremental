@@ -7302,8 +7302,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 275519047}
-        m_TargetAssemblyTypeName: Gain, Assembly-CSharp
+      - m_Target: {fileID: 1083803437}
+        m_TargetAssemblyTypeName: BreakInfinity.Functions, Assembly-CSharp
         m_MethodName: doubleHeCheck
         m_Mode: 1
         m_Arguments:
@@ -9885,9 +9885,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 275519047}
-        m_TargetAssemblyTypeName: Gain, Assembly-CSharp
-        m_MethodName: lithiumCheck
+      - m_Target: {fileID: 1083803437}
+        m_TargetAssemblyTypeName: BreakInfinity.Functions, Assembly-CSharp
+        m_MethodName: LithiumCheck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
