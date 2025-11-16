@@ -18687,6 +18687,7 @@ GameObject:
   m_Component:
   - component: {fileID: 836919969}
   - component: {fileID: 836919970}
+  - component: {fileID: 836919971}
   m_Layer: 0
   m_Name: BeScreen
   m_TagString: Untagged
@@ -18729,6 +18730,21 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &836919971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836919968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 324e2896c6704d118215e4f1cb03fc59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bigAssNumber:
+    mantissa: 0
+    exponent: 0
 --- !u!1 &840424591
 GameObject:
   m_ObjectHideFlags: 0
@@ -23947,7 +23963,10 @@ MonoBehaviour:
   helium: {fileID: 639955134}
   Hydrogen: {fileID: 1356262777}
   upgrades: {fileID: 1680943471}
-  lithium: {fileID: 0}
+  lithium: {fileID: 1676549660}
+  beryllium: {fileID: 836919971}
+  save1stMaxBuyCheck: 0
+  save1stPeriodCheck: 0
 --- !u!1 &1086980819
 GameObject:
   m_ObjectHideFlags: 0
@@ -29497,6 +29516,7 @@ MonoBehaviour:
   Hydrogen: {fileID: 1356262777}
   helium: {fileID: 639955134}
   Upgrades: {fileID: 1680943471}
+  lithium: {fileID: 0}
   hydrogenText: {fileID: 209742072}
   hydrogenTextPs: {fileID: 1770189304}
   hydrogenClickText: {fileID: 2145059334}
@@ -29513,6 +29533,8 @@ MonoBehaviour:
   buyMaxClickUpg2Text: {fileID: 302906337}
   buyMaxAutoClicker1Text: {fileID: 148383736}
   buyMaxAutoClicker2Text: {fileID: 846638989}
+  doubleHeTxt: {fileID: 893276675}
+  lithiumUnlockText: {fileID: 1496733014}
 --- !u!1 &1314707087
 GameObject:
   m_ObjectHideFlags: 0
@@ -35601,6 +35623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1676549658}
   - component: {fileID: 1676549659}
+  - component: {fileID: 1676549660}
   m_Layer: 0
   m_Name: LiScreen
   m_TagString: Untagged
@@ -35644,6 +35667,25 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1676549660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676549657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29c4a911270342968fb14ada46f6f159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bigAssNumber:
+    mantissa: 0
+    exponent: 0
+  lithiumGain:
+    mantissa: 0
+    exponent: 0
+  lithiumCheck: 0
 --- !u!1 &1680943470
 GameObject:
   m_ObjectHideFlags: 0
@@ -35692,6 +35734,9 @@ MonoBehaviour:
     exponent: 0
   hMaxBuyersGroup: {fileID: 482848705}
   HeHeliumGainLevel:
+    mantissa: 0
+    exponent: 0
+  HeHydrogenGenLevel:
     mantissa: 0
     exponent: 0
 --- !u!224 &1680943472

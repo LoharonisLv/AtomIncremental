@@ -496,44 +496,9 @@ public class Gain : MonoBehaviour
 
         return x.ToString(y);
     }
+    
 
-    public void NuclearFusion()
-    {
-        if (Hydrogen.BigAssNumber > 1.1e5)
-        {
-            Hydrogen.BigAssNumber = 0;
-            Hydrogen.ClickPower = 1;
-            
-            heliumGainUpg1Level = 0;
-
-            helium += heliumGain;
-        }
-    }
-
-    public void Lithify()
-    {
-        if (helium >= 4.45e6 && lithiumUnlock == true && save1stPeriodCheck == false)
-        {
-            Hydrogen.BigAssNumber = 0;
-            Hydrogen.ClickPower = 1;
-            
-            heliumGainUpg1Level = 0;
-            heliumGainUpg2Level = 0;
-            cpsUpg1HeLevel = 0;
-            if (save1stMaxBuyCheck == false)
-            {
-                maxBuyHbought = false;
-            }
-
-            helium = 0;
-
-            lithium += lithiumGain;
-        }
-        else if (helium >= 4.45e6 && lithiumUnlock == true && save1stPeriodCheck == true)
-        {
-            lithium += lithiumGain;
-        }
-    }
+   
 
     public void OpenBeMine()
     {
@@ -720,14 +685,7 @@ public class Gain : MonoBehaviour
         }
     }
 
-    public void save1stMaxBuy()
-    {
-        if (lithium >= 5e3 && save1stMaxBuyCheck == false)
-        {
-            save1stMaxBuyCheck = true;
-            lithium -= 5e3;
-        }
-    }
+    
 
     public void passiveHelium()
     {
@@ -738,14 +696,7 @@ public class Gain : MonoBehaviour
         }
     }
 
-    public void Save1stPeriod()
-    {
-        if (beryllium >= 2e3 && save1stPeriodCheck == false)
-        {
-            save1stPeriodCheck = true;
-            beryllium -= 2e3;
-        }
-    }
+   
 
     public void BUnlock()
     {
